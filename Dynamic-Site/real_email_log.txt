@@ -9837,3 +9837,208 @@ Body:
         </body>
         </html>
 ==========================================
+
+=== REAL EMAIL LOG [2025-08-04 16:35:11] ===
+Status: FAILED via SOCKET_FAILED: STARTTLS failed: 250-SIZE 35882577
+
+To: jaiswalharry51@gmail.com
+From: Property Finder Nepal <bistak297@gmail.com>
+Subject: Email Verification Required - Property Finder Nepal
+Gmail User: bistak297@gmail.com
+Body:
+
+        <html>
+        <head>
+            <style>
+                body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+                .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+                .header { background: #2c3e50; color: white; padding: 20px; text-align: center; }
+                .content { padding: 30px; background: #f9f9f9; }
+                .otp-code { font-size: 32px; font-weight: bold; color: #e74c3c; text-align: center; 
+                           background: white; padding: 20px; margin: 20px 0; border: 2px dashed #e74c3c; }
+                .verify-button { background: #27ae60; color: white; padding: 15px 30px; text-decoration: none; 
+                               border-radius: 5px; font-weight: bold; display: inline-block; margin: 10px 0; }
+                .footer { background: #34495e; color: white; padding: 15px; text-align: center; font-size: 12px; }
+                .warning { color: #e74c3c; font-weight: bold; }
+                .step-box { background: #e8f5e8; padding: 15px; margin: 15px 0; border-radius: 5px; border-left: 4px solid #27ae60; }
+            </style>
+        </head>
+        <body>
+            <div class='container'>
+                <div class='header'>
+                    <h1>🏠 Property Finder Nepal</h1>
+                    <h2>📧 Email Verification Required</h2>
+                </div>
+                
+                <div class='content'>
+                    <h3>नमस्कार! Welcome to Property Finder Nepal!</h3>
+                    
+                    <p>Thank you for your interest in joining Property Finder Nepal, your trusted platform for finding rental properties across beautiful Nepal.</p>
+                    
+                    <div style='background: #fff3cd; color: #856404; padding: 15px; border-radius: 5px; margin: 20px 0; border-left: 4px solid #ffc107;'>
+                        <h4>📧 Email Verification Required</h4>
+                        <p><strong>We need to verify that you have access to this email address:</strong></p>
+                        <p style='font-size: 18px; font-weight: bold; color: #2c3e50;'>📧 jaiswalharry51@gmail.com</p>
+                        <p>This email was sent from <strong>bistak297@gmail.com</strong> (Property Finder Nepal) to verify your ownership of the above email address.</p>
+                    </div>
+                    
+                    <p><strong>🔐 To complete your registration, please verify your email address using one of the methods below:</strong></p>
+                    
+                    <div class='step-box'>
+                        <h4>✅ Method 1: One-Click Verification (Recommended)</h4>
+                        <p>Click the button below to instantly verify your email and create your account:</p>
+                        <div style='text-align: center;'>
+                            <a href='http://localhost/house-rental-system/Dynamic-Site/verify_registration.php?email=jaiswalharry51%40gmail.com&token=5b3ff3aef223d64925a1fe76912300ab3a51907702e437399c6e2500a29efc65' class='verify-button'>🚀 Verify Email & Create Account</a>
+                        </div>
+                    </div>
+                    
+                    <div class='step-box'>
+                        <h4>🔢 Method 2: OTP Verification</h4>
+                        <p>Alternatively, you can enter this verification code on our website:</p>
+                        <div class='otp-code'>891178</div>
+                        <p style='text-align: center;'>
+                            <a href='http://localhost/house-rental-system/Dynamic-Site/verify_registration.php' style='color: #2c3e50; font-weight: bold;'>📱 Enter OTP Code Here</a>
+                        </p>
+                    </div>
+                    
+                    <p><strong>⚠️ Important Security Information:</strong></p>
+                    <ul>
+                        <li>This verification link and code are valid for <strong>1 hour only</strong></li>
+                        <li>Your account will NOT be created until you verify your email</li>
+                        <li>Do not share this email or verification code with anyone</li>
+                        <li>If you did not request this verification, please ignore this email</li>
+                    </ul>
+                    
+                    <div style='background: #fff3cd; color: #856404; padding: 15px; border-radius: 5px; margin: 20px 0;'>
+                        <h4>🛡️ Why We Require Email Verification:</h4>
+                        <ul>
+                            <li>✅ Ensures you have access to your email for important notifications</li>
+                            <li>✅ Prevents spam and fake accounts</li>
+                            <li>✅ Protects your account security</li>
+                            <li>✅ Enables secure password recovery</li>
+                        </ul>
+                    </div>
+                    
+                    <p><strong>🎯 After verification, you'll be able to:</strong></p>
+                    <ul>
+                        <li>🔍 Search for rental properties across Nepal</li>
+                        <li>💝 Save properties to your wishlist</li>
+                        <li>📞 Contact property owners directly</li>
+                        <li>🏘️ List your own properties (for owners)</li>
+                        <li>💬 Access our support system</li>
+                    </ul>
+                    
+                    <p>Thank you for choosing Property Finder Nepal!</p>
+                </div>
+                
+                <div class='footer'>
+                    <p>Property Finder Nepal Ltd. | Thamel Marg, Kathmandu-44600, Nepal</p>
+                    <p>📧 info@propertyfindernepal.com | 📞 +977-1-4567890</p>
+                    <p>This is an automated email. Please do not reply to this email.</p>
+                </div>
+            </div>
+        </body>
+        </html>
+==========================================
+
+=== REAL EMAIL LOG [2025-08-04 16:35:17] ===
+Status: SUCCESS via PHP_MAIL_SUCCESS
+To: jaiswalharry51@gmail.com
+From: Property Finder Nepal <bistak297@gmail.com>
+Subject: Email Verification Required - Property Finder Nepal
+Gmail User: bistak297@gmail.com
+Body:
+
+        <html>
+        <head>
+            <style>
+                body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+                .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+                .header { background: #2c3e50; color: white; padding: 20px; text-align: center; }
+                .content { padding: 30px; background: #f9f9f9; }
+                .otp-code { font-size: 32px; font-weight: bold; color: #e74c3c; text-align: center; 
+                           background: white; padding: 20px; margin: 20px 0; border: 2px dashed #e74c3c; }
+                .verify-button { background: #27ae60; color: white; padding: 15px 30px; text-decoration: none; 
+                               border-radius: 5px; font-weight: bold; display: inline-block; margin: 10px 0; }
+                .footer { background: #34495e; color: white; padding: 15px; text-align: center; font-size: 12px; }
+                .warning { color: #e74c3c; font-weight: bold; }
+                .step-box { background: #e8f5e8; padding: 15px; margin: 15px 0; border-radius: 5px; border-left: 4px solid #27ae60; }
+            </style>
+        </head>
+        <body>
+            <div class='container'>
+                <div class='header'>
+                    <h1>🏠 Property Finder Nepal</h1>
+                    <h2>📧 Email Verification Required</h2>
+                </div>
+                
+                <div class='content'>
+                    <h3>नमस्कार! Welcome to Property Finder Nepal!</h3>
+                    
+                    <p>Thank you for your interest in joining Property Finder Nepal, your trusted platform for finding rental properties across beautiful Nepal.</p>
+                    
+                    <div style='background: #fff3cd; color: #856404; padding: 15px; border-radius: 5px; margin: 20px 0; border-left: 4px solid #ffc107;'>
+                        <h4>📧 Email Verification Required</h4>
+                        <p><strong>We need to verify that you have access to this email address:</strong></p>
+                        <p style='font-size: 18px; font-weight: bold; color: #2c3e50;'>📧 jaiswalharry51@gmail.com</p>
+                        <p>This email was sent from <strong>bistak297@gmail.com</strong> (Property Finder Nepal) to verify your ownership of the above email address.</p>
+                    </div>
+                    
+                    <p><strong>🔐 To complete your registration, please verify your email address using one of the methods below:</strong></p>
+                    
+                    <div class='step-box'>
+                        <h4>✅ Method 1: One-Click Verification (Recommended)</h4>
+                        <p>Click the button below to instantly verify your email and create your account:</p>
+                        <div style='text-align: center;'>
+                            <a href='http://localhost/house-rental-system/Dynamic-Site/verify_registration.php?email=jaiswalharry51%40gmail.com&token=5b3ff3aef223d64925a1fe76912300ab3a51907702e437399c6e2500a29efc65' class='verify-button'>🚀 Verify Email & Create Account</a>
+                        </div>
+                    </div>
+                    
+                    <div class='step-box'>
+                        <h4>🔢 Method 2: OTP Verification</h4>
+                        <p>Alternatively, you can enter this verification code on our website:</p>
+                        <div class='otp-code'>891178</div>
+                        <p style='text-align: center;'>
+                            <a href='http://localhost/house-rental-system/Dynamic-Site/verify_registration.php' style='color: #2c3e50; font-weight: bold;'>📱 Enter OTP Code Here</a>
+                        </p>
+                    </div>
+                    
+                    <p><strong>⚠️ Important Security Information:</strong></p>
+                    <ul>
+                        <li>This verification link and code are valid for <strong>1 hour only</strong></li>
+                        <li>Your account will NOT be created until you verify your email</li>
+                        <li>Do not share this email or verification code with anyone</li>
+                        <li>If you did not request this verification, please ignore this email</li>
+                    </ul>
+                    
+                    <div style='background: #fff3cd; color: #856404; padding: 15px; border-radius: 5px; margin: 20px 0;'>
+                        <h4>🛡️ Why We Require Email Verification:</h4>
+                        <ul>
+                            <li>✅ Ensures you have access to your email for important notifications</li>
+                            <li>✅ Prevents spam and fake accounts</li>
+                            <li>✅ Protects your account security</li>
+                            <li>✅ Enables secure password recovery</li>
+                        </ul>
+                    </div>
+                    
+                    <p><strong>🎯 After verification, you'll be able to:</strong></p>
+                    <ul>
+                        <li>🔍 Search for rental properties across Nepal</li>
+                        <li>💝 Save properties to your wishlist</li>
+                        <li>📞 Contact property owners directly</li>
+                        <li>🏘️ List your own properties (for owners)</li>
+                        <li>💬 Access our support system</li>
+                    </ul>
+                    
+                    <p>Thank you for choosing Property Finder Nepal!</p>
+                </div>
+                
+                <div class='footer'>
+                    <p>Property Finder Nepal Ltd. | Thamel Marg, Kathmandu-44600, Nepal</p>
+                    <p>📧 info@propertyfindernepal.com | 📞 +977-1-4567890</p>
+                    <p>This is an automated email. Please do not reply to this email.</p>
+                </div>
+            </div>
+        </body>
+        </html>
+==========================================

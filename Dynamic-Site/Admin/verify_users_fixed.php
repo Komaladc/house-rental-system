@@ -1,31 +1,12 @@
 <?php
-// Direct admin access to user verification - bypass all session checks
-session_start();
+include"inc/header.php";
 
-// Auto-set admin session for direct access
-$_SESSION['userlogin'] = true;
-$_SESSION['userId'] = 1;
-$_SESSION['userLevel'] = 3;
-$_SESSION['userName'] = 'admin';
-$_SESSION['userFName'] = 'Admin';
-$_SESSION['userLName'] = 'User';
-$_SESSION['userEmail'] = 'admin@houserental.com';
-
-// Include necessary files without session checks
-include'../lib/Database.php';
-include'../helpers/Format.php';
-
-// Safe autoloader that handles missing classes
-spl_autoload_register(function($class){
-    $classFile = '../classes/'.$class.'.php';
-    if(file_exists($classFile)) {
-        include_once $classFile;
-    }
-});
-
-$db  = new Database();
-$fm  = new Format();
-$usr = new User();
+/*========================
+Admin Access Control
+========================*/
+if(Session::get("userLevel") != 3){
+    echo"<script>window.location='../index.php'</script>";
+}
 
 $message = "";
 
@@ -40,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
         if ($db->update($updateUser)) {
             // Update verification record if exists
-            $updateVerification = "UPDATE tbl_user_verification SET verification_status = 'approved', reviewed_at = NOW(), reviewed_by = 1 WHERE user_id = $userId";
+            $updateVerification = "UPDATE tbl_user_verification SET verification_status = 'approved', reviewed_at = NOW(), reviewed_by = " . Session::get("userId") . " WHERE user_id = $userId";
             $db->update($updateVerification);
             
             $message = "<div class='alert alert-success'>✅ User approved successfully! They can now sign in.</div>";
@@ -54,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $rejectionReason = mysqli_real_escape_string($db->link, $_POST['rejection_reason'] ?? 'No reason provided');
         
         // Keep user status as 0 (inactive) and update verification record
-        $updateVerification = "UPDATE tbl_user_verification SET verification_status = 'rejected', reviewed_at = NOW(), reviewed_by = 1, admin_comments = '$rejectionReason' WHERE user_id = $userId";
+        $updateVerification = "UPDATE tbl_user_verification SET verification_status = 'rejected', reviewed_at = NOW(), reviewed_by = " . Session::get("userId") . ", admin_comments = '$rejectionReason' WHERE user_id = $userId";
         
         if ($db->update($updateVerification)) {
             $message = "<div class='alert alert-warning'>❌ User rejected. Reason: $rejectionReason</div>";
@@ -262,8 +243,8 @@ $recentResult = $db->select($recentQuery);
                     </span>
                 </h4>
                 <p><strong>📧 Email:</strong> <?php echo htmlspecialchars($recent['userEmail']); ?></p>
-                <p><strong>📅 Processed:</strong> <?php echo $recent['reviewed_at'] ?? 'N/A'; ?></p>
-                <?php if (!empty($recent['admin_comments'])): ?>
+                <p><strong>📅 Processed:</strong> <?php echo $recent['reviewed_at']; ?></p>
+                <?php if ($recent['admin_comments']): ?>
                     <p><strong>💬 Admin Comments:</strong> <?php echo htmlspecialchars($recent['admin_comments']); ?></p>
                 <?php endif; ?>
             </div>

@@ -1,17 +1,19 @@
 <?php
-// Direct admin access to user verification - bypass all session checks
+// Direct admin access to user verification - no signin required
 session_start();
 
-// Auto-set admin session for direct access
-$_SESSION['userlogin'] = true;
-$_SESSION['userId'] = 1;
-$_SESSION['userLevel'] = 3;
-$_SESSION['userName'] = 'admin';
-$_SESSION['userFName'] = 'Admin';
-$_SESSION['userLName'] = 'User';
-$_SESSION['userEmail'] = 'admin@houserental.com';
+// Set admin session if not already set
+if(!isset($_SESSION['userLevel']) || $_SESSION['userLevel'] != 3) {
+    $_SESSION['userlogin'] = true;
+    $_SESSION['userId'] = 1;
+    $_SESSION['userLevel'] = 3;
+    $_SESSION['userName'] = 'admin';
+    $_SESSION['userFName'] = 'Admin';
+    $_SESSION['userLName'] = 'User';
+    $_SESSION['userEmail'] = 'admin@houserental.com';
+}
 
-// Include necessary files without session checks
+// Include necessary files for database and functionality
 include'../lib/Database.php';
 include'../helpers/Format.php';
 
@@ -104,9 +106,20 @@ $recentResult = $db->select($recentQuery);
 <!DOCTYPE html>
 <html>
 <head>
-    <title>User Verification - Admin Panel</title>
+    <title>Admin User Verification - Direct Access</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        .alert { padding: 15px; margin: 10px 0; border-radius: 5px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f5f5f5; padding: 20px; }
+        
+        .container { max-width: 1200px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
+        
+        h1 { color: #333; margin-bottom: 30px; text-align: center; padding-bottom: 15px; border-bottom: 3px solid #007cba; }
+        h2 { color: #555; margin: 30px 0 20px 0; }
+        h3 { color: #007cba; margin: 15px 0; }
+        
+        .alert { padding: 15px; margin: 15px 0; border-radius: 5px; font-weight: bold; }
         .alert-success { background: #d4edda; border: 1px solid #c3e6cb; color: #155724; }
         .alert-danger { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
         .alert-warning { background: #fff3cd; border: 1px solid #ffeaa7; color: #856404; }
@@ -116,31 +129,72 @@ $recentResult = $db->select($recentQuery);
             border: 1px solid #ddd; 
             border-radius: 8px; 
             padding: 20px; 
-            margin: 15px 0; 
-            background: #f9f9f9; 
+            margin: 20px 0; 
+            background: #fafafa; 
+            transition: all 0.3s ease;
         }
+        
+        .user-card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
         
         .user-card.pending { border-left: 5px solid #ffc107; }
         .user-card.approved { border-left: 5px solid #28a745; }
         .user-card.rejected { border-left: 5px solid #dc3545; }
         
-        .user-info { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 15px 0; }
-        .user-actions { margin-top: 15px; }
-        .btn { padding: 8px 15px; margin: 5px; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; display: inline-block; }
+        .user-info { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
+        .user-actions { margin-top: 20px; text-align: center; }
+        
+        .btn { 
+            padding: 12px 20px; 
+            margin: 8px; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            text-decoration: none; 
+            display: inline-block; 
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        
         .btn-success { background: #28a745; color: white; }
         .btn-warning { background: #ffc107; color: black; }
         .btn-danger { background: #dc3545; color: white; }
         .btn-info { background: #17a2b8; color: white; }
+        .btn-primary { background: #007cba; color: white; }
         
-        .document-preview { max-width: 150px; max-height: 100px; border: 1px solid #ccc; border-radius: 4px; margin: 5px; }
-        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
-        .stat-card { background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #007bff; }
+        .document-preview { max-width: 150px; max-height: 100px; border: 1px solid #ccc; border-radius: 4px; margin: 5px; transition: transform 0.3s ease; }
+        .document-preview:hover { transform: scale(1.1); }
+        
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 25px; border-radius: 10px; text-align: center; }
+        .stat-card h3 { margin-bottom: 10px; }
+        .stat-card h2 { font-size: 2.5em; margin: 10px 0; }
+        
+        .admin-header { background: linear-gradient(135deg, #007cba 0%, #005a8b 100%); color: white; padding: 20px; margin: -30px -30px 30px -30px; border-radius: 10px 10px 0 0; }
+        .admin-header h1 { color: white; border: none; margin: 0; }
+        
+        .navigation { text-align: center; margin: 20px 0; }
+        .navigation a { margin: 0 10px; }
+        
+        textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; margin: 10px 0; resize: vertical; }
+        
+        .reject-form { display: none; margin-top: 15px; padding: 20px; background: #fff3cd; border-radius: 5px; border: 1px solid #ffeaa7; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>👥 User Verification Management</h1>
+    <div class="admin-header">
+        <h1>🔑 Admin User Verification Panel</h1>
+        <p>Direct admin access - No signin required</p>
+    </div>
+    
+    <div class="navigation">
+        <a href="dashboard_agent.php" class="btn btn-primary">📊 Dashboard</a>
+        <a href="user_verification.php" class="btn btn-info">👥 Alt Verification</a>
+        <a href="set_admin_session.php" class="btn btn-warning">🔧 Reset Session</a>
+    </div>
     
     <?php if(!empty($message)) echo $message; ?>
     
@@ -157,19 +211,19 @@ $recentResult = $db->select($recentQuery);
         
         <div class="stat-card">
             <h3>⏳ Pending Approval</h3>
-            <h2 style="color: #ffc107;"><?php echo $pendingCount; ?></h2>
+            <h2><?php echo $pendingCount; ?></h2>
             <p>Agents/Owners waiting for verification</p>
         </div>
         
         <div class="stat-card">
             <h3>✅ Approved</h3>
-            <h2 style="color: #28a745;"><?php echo $approvedNum; ?></h2>
+            <h2><?php echo $approvedNum; ?></h2>
             <p>Successfully verified users</p>
         </div>
         
         <div class="stat-card">
             <h3>❌ Rejected</h3>
-            <h2 style="color: #dc3545;"><?php echo $rejectedNum; ?></h2>
+            <h2><?php echo $rejectedNum; ?></h2>
             <p>Rejected verification requests</p>
         </div>
     </div>
@@ -198,7 +252,7 @@ $recentResult = $db->select($recentQuery);
                 
                 <!-- Document Preview -->
                 <?php if ($user['citizenship_front'] || $user['citizenship_back'] || $user['business_license']): ?>
-                    <div style="margin: 15px 0;">
+                    <div style="margin: 20px 0;">
                         <strong>📄 Uploaded Documents:</strong><br>
                         <?php if ($user['citizenship_front']): ?>
                             <img src="../uploads/<?php echo $user['citizenship_front']; ?>" alt="Citizenship Front" class="document-preview" title="Citizenship Front">
@@ -231,11 +285,11 @@ $recentResult = $db->select($recentQuery);
                     </form>
                     
                     <!-- Hidden Reject Form -->
-                    <div id="reject_form_<?php echo $user['userId']; ?>" style="display: none; margin-top: 15px; padding: 15px; background: #fff3cd; border-radius: 5px;">
+                    <div id="reject_form_<?php echo $user['userId']; ?>" class="reject-form">
                         <form method="POST">
                             <input type="hidden" name="user_id" value="<?php echo $user['userId']; ?>">
                             <label><strong>Rejection Reason:</strong></label><br>
-                            <textarea name="rejection_reason" rows="3" style="width: 100%; margin: 10px 0;" placeholder="Please provide a reason for rejection..."></textarea><br>
+                            <textarea name="rejection_reason" rows="3" placeholder="Please provide a reason for rejection..."></textarea><br>
                             <button type="submit" name="reject_user" class="btn btn-warning">❌ Confirm Rejection</button>
                             <button type="button" class="btn" onclick="hideRejectForm(<?php echo $user['userId']; ?>)" style="background: #6c757d; color: white;">Cancel</button>
                         </form>
