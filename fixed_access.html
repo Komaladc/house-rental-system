@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏠 House Rental System - Quick Access</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .link-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .link-card {
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+        
+        .link-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border-color: #007bff;
+        }
+        
+        .link-card h3 {
+            margin: 0 0 10px 0;
+            color: #007bff;
+        }
+        
+        .link-card p {
+            margin: 0;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .status-check {
+            background: #e7f3ff;
+            border: 1px solid #b3d7ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🏠 House Rental System - Fixed & Ready!</h1>
+
+        <div class="success">
+            <h3>✅ Issue Fixed!</h3>
+            <p>The redirect to <code>signup_enhanced.php</code> has been fixed. All links now point to the correct <code>signup.php</code> file.</p>
+        </div>
+
+        <div class="warning">
+            <h3>⚠️ Important:</h3>
+            <p><strong>Always use these correct URLs:</strong></p>
+            <ul>
+                <li>✅ <strong>signup.php</strong> - Correct registration page</li>
+                <li>❌ <strong>signup_enhanced.php</strong> - Old file (now redirects automatically)</li>
+            </ul>
+        </div>
+
+        <h2>🚀 Quick Access Links</h2>
+
+        <div class="link-grid">
+            <a href="http://localhost/house-rental-system/Dynamic-Site/signup.php" class="link-card">
+                <h3>📝 User Registration</h3>
+                <p>Register as House Seeker, Property Owner, or Agent</p>
+            </a>
+
+            <a href="http://localhost/house-rental-system/Dynamic-Site/signin.php" class="link-card">
+                <h3>🔑 Sign In</h3>
+                <p>Login to your account</p>
+            </a>
+
+            <a href="http://localhost/house-rental-system/Dynamic-Site/Admin/user_verification.php" class="link-card">
+                <h3>👨‍💼 Admin Panel</h3>
+                <p>Verify pending owners and agents</p>
+            </a>
+
+            <a href="http://localhost/house-rental-system/Dynamic-Site/Admin/add_property.php" class="link-card">
+                <h3>🏠 Add Property</h3>
+                <p>Add new property (Owners/Agents only)</p>
+            </a>
+
+            <a href="http://localhost/house-rental-system/Dynamic-Site/property_list.php" class="link-card">
+                <h3>🔍 Browse Properties</h3>
+                <p>View available properties</p>
+            </a>
+
+            <a href="http://localhost/house-rental-system/status_check.php" class="link-card">
+                <h3>🔧 System Status</h3>
+                <p>Check if everything is working</p>
+            </a>
+        </div>
+
+        <div class="status-check">
+            <h3>📋 Registration Flow (Fixed):</h3>
+            <ol>
+                <li><strong>House Seekers:</strong> Register → Email Verification → Immediately Active ✅</li>
+                <li><strong>Property Owners:</strong> Register → Email Verification → Admin Approval Required → Active ✅</li>
+                <li><strong>Real Estate Agents:</strong> Register → Email Verification → Admin Approval Required → Active ✅</li>
+            </ol>
+        </div>
+
+        <div class="warning">
+            <h3>🆘 If You Still Get Errors:</h3>
+            <ol>
+                <li><strong>Check XAMPP:</strong> Apache and MySQL services must be running</li>
+                <li><strong>Clear Browser Cache:</strong> Ctrl+F5 to hard refresh</li>
+                <li><strong>Use Correct URLs:</strong> Always use the links above</li>
+                <li><strong>Import Database:</strong> Make sure <code>db_rental.sql</code> is imported in phpMyAdmin</li>
+            </ol>
+        </div>
+
+        <p style="text-align: center; color: #666; margin-top: 30px;">
+            🎯 All redirect issues have been fixed. Use the correct <strong>signup.php</strong> for registration!
+        </p>
+    </div>
+</body>
+
+</html>

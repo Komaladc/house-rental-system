@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Document Section Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        
+        .form-group {
+            margin: 15px 0;
+        }
+        
+        select {
+            padding: 8px;
+            width: 300px;
+            font-size: 16px;
+        }
+        
+        #document-section {
+            background: yellow;
+            border: 3px solid red;
+            padding: 20px;
+            margin: 20px 0;
+            display: none;
+        }
+        
+        .debug {
+            background: lightblue;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Document Section Test</h1>
+
+    <div class="debug" id="debug">Debug info will appear here...</div>
+
+    <div class="form-group">
+        <label for="level">Account Type *</label>
+        <select name="level" id="level" required>
+            <option value="">Select Account Type</option>
+            <option value="1">🏠 House Seeker (Browse & Book Properties)</option>
+            <option value="2">🏘️ Property Owner (List Your Properties)</option>
+            <option value="3">🏢 Real Estate Agent (Manage Multiple Properties)</option>
+        </select>
+    </div>
+
+    <div id="document-section">
+        <h3>📋 Required Documents for Verification</h3>
+        <p><strong>SUCCESS!</strong> This section appeared when you selected Property Owner or Agent!</p>
+        <input type="text" placeholder="Citizenship ID">
+        <input type="file" accept="image/*,.pdf">
+    </div>
+
+    <script>
+        function debug(message) {
+            const debugDiv = document.getElementById('debug');
+            debugDiv.innerHTML += '<br>' + new Date().toLocaleTimeString() + ': ' + message;
+            console.log(message);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            debug('Page loaded');
+
+            const levelSelect = document.getElementById('level');
+            const documentSection = document.getElementById('document-section');
+
+            debug('Level select found: ' + (levelSelect ? 'YES' : 'NO'));
+            debug('Document section found: ' + (documentSection ? 'YES' : 'NO'));
+
+            function updateDocumentSection() {
+                const selectedValue = levelSelect.value;
+                debug('Selected value: "' + selectedValue + '"');
+
+                if (selectedValue === '2' || selectedValue === '3') {
+                    debug('SHOWING document section');
+                    documentSection.style.display = 'block';
+                } else {
+                    debug('HIDING document section');
+                    documentSection.style.display = 'none';
+                }
+            }
+
+            levelSelect.addEventListener('change', function() {
+                debug('Change event triggered');
+                updateDocumentSection();
+            });
+
+            updateDocumentSection(); // Initial call
+            debug('Setup complete');
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fix Database Error - OTP Email Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .error_box {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #dc3545;
+            margin-bottom: 30px;
+        }
+        
+        .solution_box {
+            background: #d1ecf1;
+            color: #0c5460;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #17a2b8;
+            margin-bottom: 30px;
+        }
+        
+        .success_box {
+            background: #d4edda;
+            color: #155724;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            margin-bottom: 30px;
+        }
+        
+        .step {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+        }
+        
+        .step h3 {
+            margin-top: 0;
+            color: #007bff;
+        }
+        
+        .big_button {
+            display: inline-block;
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+            margin: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        }
+        
+        .big_button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+        }
+        
+        .warning_button {
+            background: linear-gradient(135deg, #ffc107, #e0a800);
+            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+        }
+        
+        .warning_button:hover {
+            box-shadow: 0 8px 25px rgba(255, 193, 7, 0.4);
+        }
+        
+        code {
+            background: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        
+        .code_block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+        }
+        
+        .emoji {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><span class="emoji">⚠️</span>Database Setup Required</h1>
+            <h2>Email OTP Verification System</h2>
+        </div>
+
+        <div class="content">
+            <div class="error_box">
+                <h3><span class="emoji">❌</span>Error Detected</h3>
+                <p><strong>Fatal error:</strong> Unknown column 'email_verified' in 'field list'</p>
+                <p>This error occurs because the OTP email verification system requires additional database columns that haven't been created yet.</p>
+            </div>
+
+            <div class="solution_box">
+                <h3><span class="emoji">🔧</span>Quick Fix Available</h3>
+                <p>The system has been updated to work with or without email verification. You can now choose:</p>
+                <ul>
+                    <li><strong>Option 1:</strong> Set up full email verification (recommended)</li>
+                    <li><strong>Option 2:</strong> Use the system without email verification (basic mode)</li>
+                </ul>
+            </div>
+
+            <div style="text-align: center; margin: 30px 0;">
+                <a href="setup_database.php" class="big_button">
+                    <span class="emoji">🚀</span>Set Up Email Verification
+                </a>
+                <br>
+                <a href="signup.php" class="big_button warning_button">
+                    <span class="emoji">⚡</span>Continue Without Email Verification
+                </a>
+            </div>
+
+            <div class="step">
+                <h3><span class="emoji">📋</span>Option 1: Full Email Verification Setup (Recommended)</h3>
+                <p>This will give you a professional email verification system with OTP codes.</p>
+                <ol>
+                    <li>Click the <strong>"Set Up Email Verification"</strong> button above</li>
+                    <li>The system will automatically create the required database tables</li>
+                    <li>Once complete, users will need to verify their email addresses with OTP codes</li>
+                    <li>Perfect for college projects and professional portfolios!</li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h3><span class="emoji">⚡</span>Option 2: Basic Mode (No Email Verification)</h3>
+                <p>This allows you to use the system immediately without email verification.</p>
+                <ol>
+                    <li>Click <strong>"Continue Without Email Verification"</strong></li>
+                    <li>Registration will work normally but without email verification</li>
+                    <li>You can set up email verification later if needed</li>
+                </ol>
+            </div>
+
+            <div class="success_box">
+                <h3><span class="emoji">🎯</span>What Gets Set Up with Email Verification</h3>
+                <ul>
+                    <li>✅ <strong>OTP Table:</strong> Stores verification codes</li>
+                    <li>✅ <strong>Email Verification:</strong> Users must verify email addresses</li>
+                    <li>✅ <strong>Secure Login:</strong> Cannot access without verification</li>
+                    <li>✅ <strong>Password Reset:</strong> OTP-based password recovery</li>
+                    <li>✅ <strong>Professional Templates:</strong> Beautiful Nepal-branded emails</li>
+                    <li>✅ <strong>Real Email Validation:</strong> No more fake emails</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h3><span class="emoji">🗄️</span>Manual Database Setup (Alternative)</h3>
+                <p>If you prefer to set up the database manually, run these SQL commands:</p>
+
+                <div class="code_block">
+                    -- Create OTP table CREATE TABLE `tbl_otp` ( `id` int(11) NOT NULL AUTO_INCREMENT, `email` varchar(255) NOT NULL, `otp` varchar(6) NOT NULL, `purpose` enum('registration','password_reset') NOT NULL DEFAULT 'registration', `expires_at` datetime NOT NULL,
+                    `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP, `is_used` tinyint(1) NOT NULL DEFAULT 0, PRIMARY KEY (`id`), KEY `email` (`email`), KEY `expires_at` (`expires_at`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4; -- Add email verification
+                    columns ALTER TABLE `tbl_user` ADD COLUMN `email_verified` tinyint(1) NOT NULL DEFAULT 0 AFTER `userEmail`; ALTER TABLE `tbl_user` ADD COLUMN `verification_token` varchar(32) NULL AFTER `email_verified`; -- Create index for performance
+                    CREATE INDEX idx_user_email_verified ON tbl_user(userEmail, email_verified);
+                </div>
+            </div>
+
+            <div style="text-align: center; margin: 40px 0;">
+                <h3><span class="emoji">🚀</span>Ready to Get Started?</h3>
+                <p>Choose your preferred option and start building your professional house rental system!</p>
+
+                <a href="setup_database.php" class="big_button">
+                    <span class="emoji">🔐</span>I Want Email Verification
+                </a>
+                <br>
+                <a href="signup.php" class="big_button warning_button">
+                    <span class="emoji">🏃‍♂️</span>Skip for Now
+                </a>
+            </div>
+
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; text-align: center; margin-top: 30px;">
+                <p><strong>💡 Tip:</strong> Email verification makes your project more professional and is perfect for college submissions and GitHub portfolios!</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

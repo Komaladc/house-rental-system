@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Regex Test</title>
+</head>
+
+<body>
+    <h2>📧 Email Regex Fix Test</h2>
+
+    <form>
+        <label for="email">Test Email Pattern:</label><br>
+        <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%\-+]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" placeholder="test@example.com" title="Please enter a valid email address" required>
+        <button type="submit">Test Validation</button>
+    </form>
+
+    <div id="result"></div>
+
+    <h3>Test Cases:</h3>
+    <ul>
+        <li>✅ test@example.com</li>
+        <li>✅ user.name+tag@domain.co.uk</li>
+        <li>✅ user_name@domain-name.com</li>
+        <li>✅ test123@gmail.com</li>
+        <li>❌ invalid.email</li>
+        <li>❌ @domain.com</li>
+        <li>❌ user@</li>
+    </ul>
+
+    <script>
+        const emailInput = document.getElementById('email');
+        const result = document.getElementById('result');
+
+        emailInput.addEventListener('input', function() {
+            const email = this.value;
+            const isValid = this.validity.valid;
+
+            if (email.length > 0) {
+                if (isValid) {
+                    result.innerHTML = '<span style="color: green;">✅ Valid email format</span>';
+                    result.style.background = '#d5f4e6';
+                } else {
+                    result.innerHTML = '<span style="color: red;">❌ Invalid email format</span>';
+                    result.style.background = '#f8d7da';
+                }
+                result.style.padding = '10px';
+                result.style.marginTop = '10px';
+                result.style.borderRadius = '5px';
+            } else {
+                result.innerHTML = '';
+                result.style.background = '';
+                result.style.padding = '';
+            }
+        });
+
+        // Test the JavaScript regex too
+        function testJSRegex() {
+            const emailRegex = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
+            const testEmails = [
+                'test@example.com',
+                'user.name+tag@domain.co.uk',
+                'user_name@domain-name.com',
+                'test123@gmail.com',
+                'invalid.email',
+                '@domain.com',
+                'user@'
+            ];
+
+            console.log('JavaScript Regex Test Results:');
+            testEmails.forEach(email => {
+                const isValid = emailRegex.test(email);
+                console.log(`${email}: ${isValid ? '✅' : '❌'}`);
+            });
+        }
+
+        testJSRegex();
+    </script>
+</body>
+
+</html>

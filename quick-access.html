@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Rental System - Quick Access</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+        }
+        
+        .section h2 {
+            color: #007cba;
+            margin-top: 0;
+        }
+        
+        .link-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .link-card {
+            display: block;
+            padding: 15px;
+            background: #007cba;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            transition: background 0.3s;
+        }
+        
+        .link-card:hover {
+            background: #005a87;
+            color: white;
+        }
+        
+        .status {
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .instructions {
+            background: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🏠 House Rental System - Quick Access</h1>
+
+        <div class="instructions">
+            <h3>⚠️ Before Using This Page:</h3>
+            <ol>
+                <li>Make sure XAMPP Control Panel is running</li>
+                <li>Start Apache and MySQL services</li>
+                <li>Both should show "Running" status (green)</li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h2>🗄️ Database Management</h2>
+            <div class="link-grid">
+                <a href="http://localhost/phpmyadmin" class="link-card" target="_blank">
+                    📊 phpMyAdmin<br>
+                    <small>Manage Database</small>
+                </a>
+                <a href="http://localhost/house-rental-system/Dynamic-Site/Admin/test_connection_simple.php" class="link-card" target="_blank">
+                    🔧 Test DB Connection<br>
+                    <small>Check Database Status</small>
+                </a>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎯 Application Access</h2>
+            <div class="link-grid">
+                <a href="http://localhost/house-rental-system/Dynamic-Site/" class="link-card" target="_blank">
+                    🏠 Main Application<br>
+                    <small>House Rental System</small>
+                </a>
+                <a href="http://localhost/house-rental-system/Dynamic-Site/signin.php" class="link-card" target="_blank">
+                    🔐 Sign In<br>
+                    <small>User Login</small>
+                </a>
+                <a href="http://localhost/house-rental-system/Dynamic-Site/signup.php" class="link-card" target="_blank">
+                    📝 Sign Up<br>
+                    <small>New User Registration</small>
+                </a>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🔧 Admin & Debug Tools</h2>
+            <div class="link-grid">
+                <a href="http://localhost/house-rental-system/Dynamic-Site/Admin/test_direct_insert.php" class="link-card" target="_blank">
+                    🚀 Test Direct Insert<br>
+                    <small>Database Insert Test</small>
+                </a>
+                <a href="http://localhost/house-rental-system/Dynamic-Site/Admin/debug_property_insert.php" class="link-card" target="_blank">
+                    🔧 Debug Property Insert<br>
+                    <small>Check Database Insertion</small>
+                </a>
+                <a href="http://localhost/house-rental-system/Dynamic-Site/Admin/add_property_safe.php" class="link-card" target="_blank">
+                    ✅ Add Property (Safe)<br>
+                    <small>Fixed Version with Debug</small>
+                </a>
+                <a href="http://localhost/house-rental-system/Dynamic-Site/Admin/add_property.php" class="link-card" target="_blank">
+                    ✅ Add Property<br>
+                    <small>Main Form - Now Fixed!</small>
+                </a>
+                <a href="http://localhost/house-rental-system/Dynamic-Site/Admin/debug_form_enhanced.php" class="link-card" target="_blank">
+                    🧪 Enhanced Debug Form<br>
+                    <small>Complete Testing Tool</small>
+                </a>
+                <a href="http://localhost/house-rental-system/Dynamic-Site/Admin/debug_form_test.php" class="link-card" target="_blank">
+                    🔍 Basic Debug Form<br>
+                    <small>Simple Testing</small>
+                </a>
+                <a href="http://localhost/house-rental-system/Dynamic-Site/Admin/standalone_test.php" class="link-card" target="_blank">
+                    🧪 Standalone Test<br>
+                    <small>No Auth Required</small>
+                </a>
+                <a href="http://localhost/house-rental-system/Dynamic-Site/Admin/check_database.php" class="link-card" target="_blank">
+                    🗄️ Database Check<br>
+                    <small>Table Structure</small>
+                </a>
+                <a href="http://localhost/house-rental-system/Dynamic-Site/Admin/debug_add_property.php" class="link-card" target="_blank">
+                    🔧 Debug Add Property<br>
+                    <small>TinyMCE-Free Version</small>
+                </a>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📋 Quick Actions</h2>
+            <div class="link-grid">
+                <a href="javascript:location.reload()" class="link-card">
+                    🔄 Refresh Page<br>
+                    <small>Check Server Status</small>
+                </a>
+                <a href="http://localhost/" class="link-card" target="_blank">
+                    🌐 XAMPP Dashboard<br>
+                    <small>Local Server Info</small>
+                </a>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>🚀 Getting Started:</h3>
+            <ol>
+                <li><strong>First Time:</strong> Go to phpMyAdmin → Import the database from <code>Dynamic-Site/1-Database/db_rental.sql</code></li>
+                <li><strong>Sign Up:</strong> Create a new account as an Owner (userLevel = 2)</li>
+                <li><strong>Test Form:</strong> Use the Debug Form to test property submission</li>
+                <li><strong>Troubleshoot:</strong> Use Test DB Connection if you encounter errors</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        // Test if server is accessible
+        fetch('http://localhost/')
+            .then(response => {
+                if (response.ok) {
+                    document.body.insertAdjacentHTML('afterbegin',
+                        '<div class="status success">✅ Server is running! All links should work.</div>'
+                    );
+                } else {
+                    document.body.insertAdjacentHTML('afterbegin',
+                        '<div class="status error">⚠️ Server might not be running. Please start XAMPP first.</div>'
+                    );
+                }
+            })
+            .catch(error => {
+                document.body.insertAdjacentHTML('afterbegin',
+                    '<div class="status error">❌ Server is not accessible. Please start XAMPP Control Panel and start Apache + MySQL services.</div>'
+                );
+            });
+    </script>
+</body>
+
+</html>

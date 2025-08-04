@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Minimal Document Section Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        
+        .form-group {
+            margin: 15px 0;
+        }
+        
+        select,
+        input {
+            padding: 8px;
+            width: 300px;
+        }
+        
+        #document-section {
+            background: #fffacd;
+            border: 3px solid #ff0000;
+            padding: 20px;
+            margin: 20px 0;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Minimal Document Section Test</h1>
+
+    <div class="form-group">
+        <label for="level">Account Type *</label>
+        <select name="level" id="level" required>
+            <option value="">Select Account Type</option>
+            <option value="1">🏠 House Seeker (Browse & Book Properties)</option>
+            <option value="2">🏘️ Property Owner (List Your Properties)</option>
+            <option value="3">🏢 Real Estate Agent (Manage Multiple Properties)</option>
+        </select>
+    </div>
+
+    <div id="document-section">
+        <h3>📋 Required Documents for Verification</h3>
+        <p><strong>For Property Owners & Agents:</strong> You must upload citizenship documents for admin verification.</p>
+
+        <div class="form-group">
+            <label for="citizenship_id">🆔 Citizenship Number *</label>
+            <input type="text" name="citizenship_id" id="citizenship_id" placeholder="Enter your citizenship number">
+        </div>
+
+        <div class="form-group">
+            <label for="citizenship_front">📄 Citizenship Certificate (Front Side) *</label>
+            <input type="file" name="citizenship_front" id="citizenship_front" accept="image/*,.pdf">
+        </div>
+
+        <div class="form-group">
+            <label for="citizenship_back">📄 Citizenship Certificate (Back Side) *</label>
+            <input type="file" name="citizenship_back" id="citizenship_back" accept="image/*,.pdf">
+        </div>
+    </div>
+
+    <script>
+        console.log('=== MINIMAL TEST STARTED ===');
+
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded');
+
+            const levelSelect = document.getElementById('level');
+            const documentSection = document.getElementById('document-section');
+
+            console.log('Level select:', levelSelect);
+            console.log('Document section:', documentSection);
+
+            function updateDocumentSection() {
+                const selectedValue = levelSelect.value;
+                console.log('Selected value:', selectedValue);
+
+                if (selectedValue === '2' || selectedValue === '3') {
+                    console.log('SHOWING document section');
+                    documentSection.style.display = 'block';
+                } else {
+                    console.log('HIDING document section');
+                    documentSection.style.display = 'none';
+                }
+            }
+
+            levelSelect.addEventListener('change', updateDocumentSection);
+            updateDocumentSection(); // Initial call
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Test Document Section</title>
+</head>
+
+<body>
+    <h2>Test Document Section Toggle</h2>
+
+    <label for="level">Account Type:</label>
+    <select name="level" id="level">
+        <option value="">Select Account Type</option>
+        <option value="1">🏠 House Seeker</option>
+        <option value="2">🏘️ Property Owner</option>
+        <option value="3">🏢 Real Estate Agent</option>
+    </select>
+
+    <div id="document-section" style="display: none; background: #f0f0f0; padding: 20px; margin-top: 20px; border: 2px solid #007bff;">
+        <h3>📋 Document Upload Section</h3>
+        <p>This section should appear when you select Property Owner or Real Estate Agent</p>
+        <input type="text" id="citizenship_id" placeholder="Citizenship ID">
+        <input type="file" id="citizenship_front" accept="image/*,application/pdf">
+        <input type="file" id="citizenship_back" accept="image/*,application/pdf">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const levelSelect = document.getElementById('level');
+            const documentSection = document.getElementById('document-section');
+
+            console.log('Level select found:', levelSelect);
+            console.log('Document section found:', documentSection);
+
+            function updateFormRequirements() {
+                const selectedLevel = levelSelect ? levelSelect.value : '';
+                console.log('Level changed to:', selectedLevel);
+
+                if (selectedLevel === '2' || selectedLevel === '3') {
+                    console.log('Showing document section');
+                    if (documentSection) {
+                        documentSection.style.display = 'block';
+                    }
+                } else {
+                    console.log('Hiding document section');
+                    if (documentSection) {
+                        documentSection.style.display = 'none';
+                    }
+                }
+            }
+
+            if (levelSelect) {
+                levelSelect.addEventListener('change', updateFormRequirements);
+            }
+
+            updateFormRequirements();
+        });
+    </script>
+</body>
+
+</html>

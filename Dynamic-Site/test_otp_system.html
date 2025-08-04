@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Email Verification - Test Page</title>
+    <link rel="stylesheet" href="mystyle.css">
+    <style>
+        .test_container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .step_box {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .step_box.success {
+            border-left-color: #27ae60;
+            background: #f0fff0;
+        }
+        
+        .step_box.warning {
+            border-left-color: #f39c12;
+            background: #fff8f0;
+        }
+        
+        .test_button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            margin: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .test_button:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+        
+        .test_button.success {
+            background: #27ae60;
+        }
+        
+        .test_button.warning {
+            background: #f39c12;
+        }
+        
+        .feature_list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .feature_card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .feature_card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .emoji {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="test_container">
+        <div style="text-align: center; margin-bottom: 40px;">
+            <h1>🔐 Email OTP Verification System</h1>
+            <h2>Nepal House Rental System</h2>
+            <p>Complete email verification system with real OTP codes sent to user's email</p>
+        </div>
+
+        <div class="step_box success">
+            <h3>✅ System Features Implemented</h3>
+            <ul>
+                <li><strong>Real Email Verification:</strong> Users must verify their email with OTP before accessing the system</li>
+                <li><strong>6-Digit OTP Codes:</strong> Secure, time-limited verification codes</li>
+                <li><strong>Professional Email Templates:</strong> Nepal-branded emails with security information</li>
+                <li><strong>Password Reset with OTP:</strong> Secure password recovery system</li>
+                <li><strong>Login Protection:</strong> Cannot login without email verification</li>
+            </ul>
+        </div>
+
+        <div class="feature_list">
+            <div class="feature_card">
+                <div class="emoji">📧</div>
+                <h3>Registration with Email Verification</h3>
+                <p>New users receive OTP via email and must verify before account activation</p>
+                <a href="signup.php" class="test_button">Test Registration</a>
+            </div>
+
+            <div class="feature_card">
+                <div class="emoji">🔑</div>
+                <h3>Secure Login System</h3>
+                <p>Only verified users can login. Unverified users get new OTP</p>
+                <a href="signin.php" class="test_button">Test Login</a>
+            </div>
+
+            <div class="feature_card">
+                <div class="emoji">🔐</div>
+                <h3>OTP Password Reset</h3>
+                <p>Forgot password? Get OTP via email to securely reset password</p>
+                <a href="forgot_password_otp.php" class="test_button warning">Test Password Reset</a>
+            </div>
+
+            <div class="feature_card">
+                <div class="emoji">✉️</div>
+                <h3>Email Verification Page</h3>
+                <p>Professional verification interface with auto-submit and validation</p>
+                <a href="verify_email.php" class="test_button success">View Verification Page</a>
+            </div>
+        </div>
+
+        <div class="step_box">
+            <h3>🗄️ Database Setup Required</h3>
+            <p>Before testing, make sure you've set up the database:</p>
+            <ol>
+                <li>Run the SQL commands from <code>1-Database/otp_verification.sql</code></li>
+                <li>This creates the <code>tbl_otp</code> table</li>
+                <li>Adds <code>email_verified</code> column to <code>tbl_user</code> table</li>
+            </ol>
+            <a href="1-Database/otp_verification.sql" class="test_button" target="_blank">View SQL File</a>
+        </div>
+
+        <div class="step_box warning">
+            <h3>⚠️ Testing Instructions</h3>
+            <p><strong>Important:</strong> Use real email addresses that you can access for testing!</p>
+            <ol>
+                <li><strong>Registration Test:</strong> Sign up with your real email</li>
+                <li><strong>Check Email:</strong> Look for OTP code (check spam folder too)</li>
+                <li><strong>Verify:</strong> Enter the 6-digit code to activate account</li>
+                <li><strong>Login Test:</strong> Try logging in before and after verification</li>
+                <li><strong>Password Reset:</strong> Test the forgot password feature</li>
+            </ol>
+        </div>
+
+        <div class="step_box success">
+            <h3>🎯 Security Benefits</h3>
+            <ul>
+                <li>✅ <strong>Real Email Validation:</strong> No more fake emails like "abcd@gmail.com"</li>
+                <li>✅ <strong>Account Security:</strong> Users must have access to their email</li>
+                <li>✅ <strong>Secure Password Reset:</strong> Cannot reset without email access</li>
+                <li>✅ <strong>Professional System:</strong> College and GitHub portfolio ready</li>
+                <li>✅ <strong>Production Ready:</strong> Suitable for real-world deployment</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <h3>🚀 Ready for Testing!</h3>
+            <p>The system now enforces real email verification for all users.</p>
+            <p>Perfect for your college project and GitHub portfolio!</p>
+
+            <div style="margin-top: 20px;">
+                <a href="signup.php" class="test_button success">Start Testing - Sign Up</a>
+                <a href="OTP_SETUP_INSTRUCTIONS.md" class="test_button" target="_blank">📋 Setup Instructions</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

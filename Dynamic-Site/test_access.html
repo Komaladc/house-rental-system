@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ne">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏠 Nepal House Rental - Signup Direct Test</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .logo h1 {
+            color: #2c3e50;
+            margin: 0;
+            font-size: 2.5em;
+        }
+        
+        .logo p {
+            color: #7f8c8d;
+            margin: 5px 0 0 0;
+        }
+        
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .test-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #3498db;
+        }
+        
+        .test-link {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .test-link:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+        }
+        
+        .test-link.secondary {
+            background: #27ae60;
+        }
+        
+        .test-link.secondary:hover {
+            background: #229954;
+        }
+        
+        .test-link.debug {
+            background: #8e44ad;
+        }
+        
+        .test-link.debug:hover {
+            background: #7d3c98;
+        }
+        
+        .instructions {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .instructions h3 {
+            margin-top: 0;
+            color: #856404;
+        }
+        
+        .success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        
+        .error {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1>🏠 Nepal House Rental</h1>
+            <p>खुसी भएको घर खोज्नुहोस् | Find Your Happy Home</p>
+        </div>
+
+        <div class="instructions">
+            <h3>🔍 Signup Page Visibility Test</h3>
+            <p><strong>If you can see this page, your web server is working!</strong></p>
+            <p>Test the signup pages below to see which ones work:</p>
+        </div>
+
+        <div class="test-grid">
+            <div class="test-card">
+                <h3>📧 Main Signup with Email Verification</h3>
+                <p>This is the new signup page with OTP email verification.</p>
+                <a href="signup_with_verification.php" class="test-link" target="_blank">
+                    Test Signup with Verification
+                </a>
+            </div>
+
+            <div class="test-card">
+                <h3>🧪 Simple Test Page</h3>
+                <p>Basic signup test without complex dependencies.</p>
+                <a href="simple_signup_test.php" class="test-link secondary" target="_blank">
+                    Test Simple Signup
+                </a>
+            </div>
+
+            <div class="test-card">
+                <h3>🔧 Debug Test</h3>
+                <p>Detailed debugging information.</p>
+                <a href="test_signup_debug.php" class="test-link debug" target="_blank">
+                    Test Debug Page
+                </a>
+            </div>
+
+            <div class="test-card">
+                <h3>👀 Visibility Test</h3>
+                <p>Check page dependencies and loading.</p>
+                <a href="test_page_visibility.php" class="test-link" style="background: #f39c12;" target="_blank">
+                    Test Page Visibility
+                </a>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>📱 How to Check for Issues:</h3>
+            <ol>
+                <li><strong>White Screen:</strong> Press F12 → Console tab → Look for red errors</li>
+                <li><strong>404 Error:</strong> File path is wrong or Apache not running</li>
+                <li><strong>Blank Page:</strong> PHP error or missing CSS</li>
+                <li><strong>Page Loads Slowly:</strong> Database connection issue</li>
+            </ol>
+        </div>
+
+        <div class="instructions success">
+            <h3>✅ Expected Results:</h3>
+            <p><strong>signup_with_verification.php should show:</strong></p>
+            <ul>
+                <li>🏠 Nepal House Rental logo and header</li>
+                <li>📝 Registration form with name, email, phone, password fields</li>
+                <li>🛡️ Real-time validation messages</li>
+                <li>📧 "Create Account with Email Verification" button</li>
+                <li>🔗 Link to sign in page</li>
+            </ul>
+        </div>
+
+        <div class="instructions error">
+            <h3>❌ If Signup Page is Not Working:</h3>
+            <p><strong>Common issues and solutions:</strong></p>
+            <ul>
+                <li><strong>XAMPP not running:</strong> Start Apache and MySQL in XAMPP Control Panel</li>
+                <li><strong>Wrong URL:</strong> Use <code>http://localhost/house-rental-system/Dynamic-Site/signup_with_verification.php</code></li>
+                <li><strong>Database not created:</strong> Run <code>fix_database.php</code> first</li>
+                <li><strong>Missing files:</strong> Check if all class files exist in <code>classes/</code> folder</li>
+            </ul>
+        </div>
+
+        <script>
+            // Test JavaScript loading
+            document.addEventListener('DOMContentLoaded', function() {
+                console.log('✅ Test page loaded successfully');
+
+                // Add a visual indicator that JavaScript is working
+                const indicator = document.createElement('div');
+                indicator.innerHTML = '✅ JavaScript is working correctly';
+                indicator.style.background = '#d5f4e6';
+                indicator.style.padding = '10px';
+                indicator.style.borderRadius = '5px';
+                indicator.style.margin = '20px 0';
+                indicator.style.textAlign = 'center';
+                indicator.style.fontWeight = 'bold';
+                indicator.style.color = '#27ae60';
+                document.querySelector('.container').appendChild(indicator);
+            });
+        </script>
+    </div>
+</body>
+
+</html>

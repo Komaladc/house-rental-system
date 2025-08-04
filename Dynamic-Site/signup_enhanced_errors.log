@@ -1,0 +1,282 @@
+[04-Aug-2025 10:21:43 Europe/Berlin] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 14:06:43 Asia/Kathmandu] Header included successfully
+[04-Aug-2025 10:22:25 Europe/Berlin] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 14:07:25 Asia/Kathmandu] Header included successfully
+[04-Aug-2025 10:23:07 Europe/Berlin] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 14:08:07 Asia/Kathmandu] Header included successfully
+[04-Aug-2025 10:26:12 Europe/Berlin] === SIGNUP_ENHANCED.PHP STARTED - CLEAN VERSION ===
+[04-Aug-2025 10:26:55 Europe/Berlin] === SIGNUP_ENHANCED.PHP STARTED - CLEAN VERSION ===
+[04-Aug-2025 10:28:18 Europe/Berlin] === SIGNUP_ENHANCED.PHP STARTED - CLEAN VERSION ===
+[04-Aug-2025 14:13:18 Asia/Kathmandu] Form submission detected
+[04-Aug-2025 14:13:18 Asia/Kathmandu] Registration processed for: komala adhikaris (Property Owner)
+[04-Aug-2025 10:28:43 Europe/Berlin] === SIGNUP_ENHANCED.PHP STARTED - CLEAN VERSION ===
+[04-Aug-2025 10:30:18 Europe/Berlin] === SIGNUP_ENHANCED.PHP STARTED - CLEAN VERSION ===
+[04-Aug-2025 10:31:24 Europe/Berlin] === SIGNUP_ENHANCED.PHP STARTED - CLEAN VERSION ===
+[04-Aug-2025 14:16:24 Asia/Kathmandu] Form submission detected
+[04-Aug-2025 14:16:24 Asia/Kathmandu] Registration processed for: komala harish (Property Owner)
+[04-Aug-2025 10:31:39 Europe/Berlin] === SIGNUP_ENHANCED.PHP STARTED - CLEAN VERSION ===
+[04-Aug-2025 10:32:49 Europe/Berlin] === SIGNUP_ENHANCED.PHP STARTED - CLEAN VERSION ===
+[04-Aug-2025 10:33:14 Europe/Berlin] === SIGNUP_ENHANCED.PHP STARTED - CLEAN VERSION ===
+[04-Aug-2025 10:33:19 Europe/Berlin] === SIGNUP_ENHANCED.PHP STARTED - CLEAN VERSION ===
+[04-Aug-2025 10:38:41 Europe/Berlin] === SIGNUP_ENHANCED.PHP STARTED - CLEAN VERSION ===
+[04-Aug-2025 10:38:50 Europe/Berlin] === SIGNUP_ENHANCED.PHP STARTED - CLEAN VERSION ===
+[04-Aug-2025 10:39:15 Europe/Berlin] === SIGNUP_ENHANCED.PHP STARTED - CLEAN VERSION ===
+[04-Aug-2025 10:40:46 Europe/Berlin] === SIGNUP_ENHANCED.PHP STARTED - CLEAN VERSION ===
+[04-Aug-2025 10:40:55 Europe/Berlin] === SIGNUP_ENHANCED.PHP STARTED - CLEAN VERSION ===
+[04-Aug-2025 10:41:31 Europe/Berlin] === SIGNUP_ENHANCED.PHP STARTED - CLEAN VERSION ===
+[04-Aug-2025 14:26:31 Asia/Kathmandu] Form submission detected
+[04-Aug-2025 14:26:31 Asia/Kathmandu] Registration processed for: Komala Adhinka (Property Owner)
+[04-Aug-2025 10:44:16 Europe/Berlin] === SIGNUP_ENHANCED.PHP STARTED - CLEAN VERSION ===
+[04-Aug-2025 10:45:43 Europe/Berlin] === SIGNUP_ENHANCED.PHP STARTED - CLEAN VERSION ===
+[04-Aug-2025 14:30:43 Asia/Kathmandu] Form submission detected
+[04-Aug-2025 14:30:43 Asia/Kathmandu] Registration processed for: komal shrestha (Property Owner)
+[04-Aug-2025 10:46:01 Europe/Berlin] === SIGNUP_ENHANCED.PHP STARTED - CLEAN VERSION ===
+[04-Aug-2025 10:47:37 Europe/Berlin] === SIGNUP_ENHANCED.PHP STARTED - CLEAN VERSION ===
+[04-Aug-2025 14:32:37 Asia/Kathmandu] Form submission detected
+[04-Aug-2025 14:32:37 Asia/Kathmandu] Registration processed for: komal pradhan (Real Estate Agent)
+[04-Aug-2025 11:02:20 Europe/Berlin] === SIGNUP_ENHANCED.PHP STARTED - CLEAN VERSION ===
+[04-Aug-2025 11:04:23 Europe/Berlin] === SIGNUP_ENHANCED.PHP STARTED - CLEAN VERSION ===
+[04-Aug-2025 14:49:23 Asia/Kathmandu] Form submission detected
+[04-Aug-2025 14:49:23 Asia/Kathmandu] Registration processed for: Komala Adhinka (Property Owner)
+[04-Aug-2025 14:54:49 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 14:54:49 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 14:54:49 Asia/Kathmandu] PHP Fatal error:  Cannot declare class Database, because the name is already in use in C:\xampp\htdocs\house-rental-system\Dynamic-Site\lib\Database.php on line 5
+[04-Aug-2025 14:56:00 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 14:56:00 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 14:56:00 Asia/Kathmandu] PHP Fatal error:  Cannot declare class Database, because the name is already in use in C:\xampp\htdocs\house-rental-system\Dynamic-Site\lib\Database.php on line 5
+[04-Aug-2025 14:56:04 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 14:56:04 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 14:56:04 Asia/Kathmandu] PHP Fatal error:  Cannot declare class Database, because the name is already in use in C:\xampp\htdocs\house-rental-system\Dynamic-Site\lib\Database.php on line 5
+[04-Aug-2025 14:56:08 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 14:56:08 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 14:56:08 Asia/Kathmandu] PHP Fatal error:  Cannot declare class Database, because the name is already in use in C:\xampp\htdocs\house-rental-system\Dynamic-Site\lib\Database.php on line 5
+[04-Aug-2025 14:59:19 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 14:59:19 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 14:59:19 Asia/Kathmandu] PHP Fatal error:  Cannot declare class Database, because the name is already in use in C:\xampp\htdocs\house-rental-system\Dynamic-Site\lib\Database.php on line 5
+[04-Aug-2025 15:00:53 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 15:00:53 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 15:00:53 Asia/Kathmandu] PHP Fatal error:  Cannot declare class Database, because the name is already in use in C:\xampp\htdocs\house-rental-system\Dynamic-Site\lib\Database.php on line 5
+[04-Aug-2025 15:00:54 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 15:00:54 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 15:00:54 Asia/Kathmandu] PHP Fatal error:  Cannot declare class Database, because the name is already in use in C:\xampp\htdocs\house-rental-system\Dynamic-Site\lib\Database.php on line 5
+[04-Aug-2025 15:00:57 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 15:00:57 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 15:00:57 Asia/Kathmandu] PHP Fatal error:  Cannot declare class Database, because the name is already in use in C:\xampp\htdocs\house-rental-system\Dynamic-Site\lib\Database.php on line 5
+[04-Aug-2025 15:02:20 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 15:02:20 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 15:02:20 Asia/Kathmandu] PHP Fatal error:  Cannot declare class Database, because the name is already in use in C:\xampp\htdocs\house-rental-system\Dynamic-Site\lib\Database.php on line 5
+[04-Aug-2025 15:03:58 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 15:03:58 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 15:03:58 Asia/Kathmandu] PHP Fatal error:  Cannot redeclare class Database (previously declared in C:\xampp\htdocs\house-rental-system\Dynamic-Site\lib\Database.php:5) in C:\xampp\htdocs\house-rental-system\Dynamic-Site\lib\Database.php on line 5
+[04-Aug-2025 15:04:50 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 15:04:50 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 15:04:50 Asia/Kathmandu] PHP Fatal error:  Cannot declare class Database, because the name is already in use in C:\xampp\htdocs\house-rental-system\Dynamic-Site\lib\Database.php on line 5
+[04-Aug-2025 15:06:47 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 15:06:47 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 15:06:47 Asia/Kathmandu] PHP Fatal error:  Cannot declare class Database, because the name is already in use in C:\xampp\htdocs\house-rental-system\Dynamic-Site\lib\Database.php on line 5
+[04-Aug-2025 15:06:48 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 15:06:48 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 15:06:48 Asia/Kathmandu] PHP Fatal error:  Cannot declare class Database, because the name is already in use in C:\xampp\htdocs\house-rental-system\Dynamic-Site\lib\Database.php on line 5
+[04-Aug-2025 15:06:49 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 15:06:49 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 15:06:49 Asia/Kathmandu] PHP Fatal error:  Cannot declare class Database, because the name is already in use in C:\xampp\htdocs\house-rental-system\Dynamic-Site\lib\Database.php on line 5
+[04-Aug-2025 15:06:49 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 15:06:49 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 15:06:49 Asia/Kathmandu] PHP Fatal error:  Cannot declare class Database, because the name is already in use in C:\xampp\htdocs\house-rental-system\Dynamic-Site\lib\Database.php on line 5
+[04-Aug-2025 15:06:51 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 15:06:51 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 15:06:52 Asia/Kathmandu] PHP Fatal error:  Cannot declare class Database, because the name is already in use in C:\xampp\htdocs\house-rental-system\Dynamic-Site\lib\Database.php on line 5
+[04-Aug-2025 15:06:54 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 15:06:54 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 15:06:54 Asia/Kathmandu] PHP Fatal error:  Cannot declare class Database, because the name is already in use in C:\xampp\htdocs\house-rental-system\Dynamic-Site\lib\Database.php on line 5
+[04-Aug-2025 15:07:13 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 15:07:13 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 15:07:13 Asia/Kathmandu] PHP Fatal error:  Cannot declare class Database, because the name is already in use in C:\xampp\htdocs\house-rental-system\Dynamic-Site\lib\Database.php on line 5
+[04-Aug-2025 15:07:44 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 15:07:44 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 15:07:44 Asia/Kathmandu] PHP Fatal error:  Cannot declare class Database, because the name is already in use in C:\xampp\htdocs\house-rental-system\Dynamic-Site\lib\Database.php on line 5
+[04-Aug-2025 15:10:45 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 15:10:45 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 15:10:45 Asia/Kathmandu] PHP Fatal error:  Cannot redeclare class Database (previously declared in C:\xampp\htdocs\house-rental-system\Dynamic-Site\lib\Database.php:5) in C:\xampp\htdocs\house-rental-system\Dynamic-Site\lib\Database.php on line 5
+[04-Aug-2025 15:12:29 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 15:12:29 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 15:12:29 Asia/Kathmandu] PHP Fatal error:  Cannot declare class Database, because the name is already in use in C:\xampp\htdocs\house-rental-system\Dynamic-Site\lib\Database.php on line 5
+[04-Aug-2025 15:15:55 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 15:15:55 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 15:15:55 Asia/Kathmandu] PHP Fatal error:  Cannot redeclare class Database (previously declared in C:\xampp\htdocs\house-rental-system\Dynamic-Site\lib\Database.php:5) in C:\xampp\htdocs\house-rental-system\Dynamic-Site\lib\Database.php on line 5
+[04-Aug-2025 15:17:59 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 15:17:59 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 15:17:59 Asia/Kathmandu] PHP Warning:  include_once(classes/mysqli.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\house-rental-system\Dynamic-Site\inc\header.php on line 16
+[04-Aug-2025 15:17:59 Asia/Kathmandu] PHP Warning:  include_once(): Failed opening 'classes/mysqli.php' for inclusion (include_path='.;C:\php\pear') in C:\xampp\htdocs\house-rental-system\Dynamic-Site\inc\header.php on line 16
+[04-Aug-2025 15:17:59 Asia/Kathmandu] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in C:\xampp\htdocs\house-rental-system\Dynamic-Site\lib\Database.php:19
+Stack trace:
+#0 C:\xampp\htdocs\house-rental-system\Dynamic-Site\lib\Database.php(15): Database->connectDB()
+#1 C:\xampp\htdocs\house-rental-system\Dynamic-Site\inc\header.php(19): Database->__construct()
+#2 C:\xampp\htdocs\house-rental-system\Dynamic-Site\signup_enhanced.php(35): include('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\house-rental-system\Dynamic-Site\lib\Database.php on line 19
+[04-Aug-2025 15:18:22 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 15:18:22 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 15:18:22 Asia/Kathmandu] Header included successfully
+[04-Aug-2025 15:20:06 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 15:20:06 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 15:20:06 Asia/Kathmandu] Header included successfully
+[04-Aug-2025 15:20:26 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 15:20:27 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 15:20:27 Asia/Kathmandu] Header included successfully
+[04-Aug-2025 15:21:08 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 15:21:08 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 15:21:08 Asia/Kathmandu] Header included successfully
+[04-Aug-2025 15:21:09 Asia/Kathmandu] === FORM SUBMISSION DETECTED ===
+[04-Aug-2025 15:21:09 Asia/Kathmandu] POST data: Array
+(
+    [fname] => Komala
+    [lname] => Adhinka
+    [username] => koma1212
+    [email] => jaiswalharry51@gmail.com
+    [cellno] => 9883264238
+    [password] => 123456
+    [cnf_password] => 123456
+    [level] => 2
+    [address] => bhaktapur,nepal
+    [citizenship_id] => 2879437589
+    [register] => 
+)
+
+[04-Aug-2025 15:21:09 Asia/Kathmandu] Validation passed - initiating email verification
+[04-Aug-2025 15:21:09 Asia/Kathmandu] Creating pending verification - Email: jaiswalharry51@gmail.com, Created: 2025-08-04 15:21:09, Pending Expires: 2025-08-04 17:21:09, OTP Expires: 2025-08-04 15:41:09
+[04-Aug-2025 15:21:09 Asia/Kathmandu] OTP Insert Query: INSERT INTO tbl_otp (email, otp, purpose, created_at, expires_at, is_used) 
+                         VALUES ('jaiswalharry51@gmail.com', 
+                                '251334', 
+                                'registration', 
+                                '2025-08-04 15:21:09', 
+                                '2025-08-04 15:41:09',
+                                0)
+[04-Aug-2025 15:21:09 Asia/Kathmandu] OTP Insert Result: SUCCESS
+[04-Aug-2025 15:21:35 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 15:21:35 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 15:21:35 Asia/Kathmandu] Header included successfully
+[04-Aug-2025 15:21:35 Asia/Kathmandu] === OTP VERIFICATION ATTEMPT ===
+[04-Aug-2025 15:21:35 Asia/Kathmandu] Email: jaiswalharry51@gmail.com, OTP: 251334
+[04-Aug-2025 15:21:35 Asia/Kathmandu] verifyOTPAndCreateAccount called - Email: jaiswalharry51@gmail.com, OTP: 251334
+[04-Aug-2025 15:21:35 Asia/Kathmandu] Checking pending verification: SELECT * FROM tbl_pending_verification 
+                        WHERE email = 'jaiswalharry51@gmail.com' 
+                        AND expires_at > '2025-08-04 15:21:35'
+                        AND is_verified = 0
+                        ORDER BY created_at DESC LIMIT 1
+[04-Aug-2025 15:21:35 Asia/Kathmandu] Found pending verification - Token: 705d34b090...
+[04-Aug-2025 15:21:35 Asia/Kathmandu] Checking OTP: SELECT * FROM tbl_otp 
+                    WHERE email = 'jaiswalharry51@gmail.com' 
+                    AND otp = '251334' 
+                    AND purpose = 'registration' 
+                    AND expires_at > '2025-08-04 15:21:35'
+                    ORDER BY created_at DESC LIMIT 1
+[04-Aug-2025 15:21:35 Asia/Kathmandu] Marked OTP as used for email: jaiswalharry51@gmail.com
+[04-Aug-2025 15:21:35 Asia/Kathmandu] Creating user account with query: INSERT INTO tbl_user(firstName, lastName, userName, userImg, userEmail, cellNo, phoneNo, userAddress, userPass, confPass, userLevel, userStatus) 
+                     VALUES('Komala',
+                            'Adhinka',
+                            'koma1212',
+                            '',
+                            'jaiswalharry51@gmail.com',
+                            '9883264238',
+                            '',
+                            'bhaktapur,nepal',
+                            'e10adc3949ba59abbe56e057f20f883e',
+                            'e10adc3949ba59abbe56e057f20f883e',
+                            '2',
+                            0)
+[04-Aug-2025 15:21:35 Asia/Kathmandu] Storing user documents - User ID: 1, Email: jaiswalharry51@gmail.com, Username: koma1212, Type: owner, Citizenship ID: 
+[04-Aug-2025 15:21:35 Asia/Kathmandu] Insert Query: INSERT INTO tbl_user_verification (user_id, email, userName, user_level, user_type, citizenship_id, citizenship_front, citizenship_back, business_license, verification_status, submitted_at) 
+                       VALUES (1, 
+                              'jaiswalharry51@gmail.com',
+                              'koma1212',
+                              2,
+                              'owner', 
+                              '',
+                              NULL, 
+                              NULL, 
+                              NULL, 
+                              'pending', 
+                              NOW())
+[04-Aug-2025 15:21:35 Asia/Kathmandu] Insert Result: SUCCESS
+[04-Aug-2025 15:28:06 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 15:28:06 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 15:28:06 Asia/Kathmandu] Header included successfully
+[04-Aug-2025 15:29:40 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 15:29:40 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 15:29:40 Asia/Kathmandu] Header included successfully
+[04-Aug-2025 15:30:14 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 15:30:14 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 15:30:14 Asia/Kathmandu] Header included successfully
+[04-Aug-2025 15:30:14 Asia/Kathmandu] === FORM SUBMISSION DETECTED ===
+[04-Aug-2025 15:30:14 Asia/Kathmandu] POST data: Array
+(
+    [fname] => Komala
+    [lname] => Adhinka
+    [username] => koma1212
+    [email] => jaiswalharry51@gmail.com
+    [cellno] => 9883264238
+    [password] => 123456
+    [cnf_password] => 123456
+    [level] => 2
+    [address] => bhaktapur,nepal
+    [citizenship_id] => 389275689234
+    [register] => 
+)
+
+[04-Aug-2025 15:30:14 Asia/Kathmandu] Validation passed - initiating email verification
+[04-Aug-2025 15:30:14 Asia/Kathmandu] Creating pending verification - Email: jaiswalharry51@gmail.com, Created: 2025-08-04 15:30:14, Pending Expires: 2025-08-04 17:30:14, OTP Expires: 2025-08-04 15:50:14
+[04-Aug-2025 15:30:14 Asia/Kathmandu] OTP Insert Query: INSERT INTO tbl_otp (email, otp, purpose, created_at, expires_at, is_used) 
+                         VALUES ('jaiswalharry51@gmail.com', 
+                                '416706', 
+                                'registration', 
+                                '2025-08-04 15:30:14', 
+                                '2025-08-04 15:50:14',
+                                0)
+[04-Aug-2025 15:30:15 Asia/Kathmandu] OTP Insert Result: SUCCESS
+[04-Aug-2025 15:30:58 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 15:30:58 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 15:30:58 Asia/Kathmandu] Header included successfully
+[04-Aug-2025 15:30:58 Asia/Kathmandu] === OTP VERIFICATION ATTEMPT ===
+[04-Aug-2025 15:30:58 Asia/Kathmandu] Email: jaiswalharry51@gmail.com, OTP: 416706
+[04-Aug-2025 15:30:58 Asia/Kathmandu] verifyOTPAndCreateAccount called - Email: jaiswalharry51@gmail.com, OTP: 416706
+[04-Aug-2025 15:30:58 Asia/Kathmandu] Checking pending verification: SELECT * FROM tbl_pending_verification 
+                        WHERE email = 'jaiswalharry51@gmail.com' 
+                        AND expires_at > '2025-08-04 15:30:58'
+                        AND is_verified = 0
+                        ORDER BY created_at DESC LIMIT 1
+[04-Aug-2025 15:30:58 Asia/Kathmandu] Found pending verification - Token: 3789adc6bd...
+[04-Aug-2025 15:30:58 Asia/Kathmandu] Checking OTP: SELECT * FROM tbl_otp 
+                    WHERE email = 'jaiswalharry51@gmail.com' 
+                    AND otp = '416706' 
+                    AND purpose = 'registration' 
+                    AND expires_at > '2025-08-04 15:30:58'
+                    ORDER BY created_at DESC LIMIT 1
+[04-Aug-2025 15:30:58 Asia/Kathmandu] Marked OTP as used for email: jaiswalharry51@gmail.com
+[04-Aug-2025 15:30:58 Asia/Kathmandu] Creating user account with query: INSERT INTO tbl_user(firstName, lastName, userName, userImg, userEmail, cellNo, phoneNo, userAddress, userPass, confPass, userLevel, userStatus) 
+                     VALUES('Komala',
+                            'Adhinka',
+                            'koma1212',
+                            '',
+                            'jaiswalharry51@gmail.com',
+                            '9883264238',
+                            '',
+                            'bhaktapur,nepal',
+                            'e10adc3949ba59abbe56e057f20f883e',
+                            'e10adc3949ba59abbe56e057f20f883e',
+                            '2',
+                            0)
+[04-Aug-2025 15:30:58 Asia/Kathmandu] Storing user documents - User ID: 1, Email: jaiswalharry51@gmail.com, Username: koma1212, Type: owner, Citizenship ID: 
+[04-Aug-2025 15:30:58 Asia/Kathmandu] Insert Query: INSERT INTO tbl_user_verification (user_id, email, userName, user_level, user_type, citizenship_id, citizenship_front, citizenship_back, business_license, verification_status, submitted_at) 
+                       VALUES (1, 
+                              'jaiswalharry51@gmail.com',
+                              'koma1212',
+                              2,
+                              'owner', 
+                              '',
+                              NULL, 
+                              NULL, 
+                              NULL, 
+                              'pending', 
+                              NOW())
+[04-Aug-2025 15:30:58 Asia/Kathmandu] Insert Result: SUCCESS

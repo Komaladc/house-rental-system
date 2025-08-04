@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Debug Signup Enhanced</title>
+    <style>
+        .debug {
+            background: yellow;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid red;
+        }
+        
+        #document-section {
+            background: lightgreen;
+            padding: 20px;
+            margin: 10px 0;
+            border: 2px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Debug: Document Section Toggle</h2>
+
+    <div class="debug">
+        <strong>Debug Info:</strong>
+        <div id="debug-info">Loading...</div>
+    </div>
+
+    <label for="level">Account Type:</label>
+    <select name="level" id="level">
+        <option value="">Select Account Type</option>
+        <option value="1">🏠 House Seeker</option>
+        <option value="2">🏘️ Property Owner</option>
+        <option value="3">🏢 Real Estate Agent</option>
+    </select>
+
+    <div id="document-section" style="display: none;">
+        <h3>📋 Document Upload Section</h3>
+        <p>This section should appear when you select Property Owner or Real Estate Agent</p>
+        <input type="text" id="citizenship_id" placeholder="Citizenship ID">
+        <input type="file" id="citizenship_front" accept="image/*,application/pdf">
+        <input type="file" id="citizenship_back" accept="image/*,application/pdf">
+    </div>
+
+    <div class="debug">
+        <button onclick="forceShow()">Force Show Document Section</button>
+        <button onclick="forceHide()">Force Hide Document Section</button>
+    </div>
+
+    <script>
+        function updateDebugInfo(message) {
+            const debugDiv = document.getElementById('debug-info');
+            debugDiv.innerHTML += '<br>' + new Date().toLocaleTimeString() + ': ' + message;
+        }
+
+        function forceShow() {
+            const doc = document.getElementById('document-section');
+            doc.style.display = 'block';
+            updateDebugInfo('FORCED SHOW - Document section display: ' + doc.style.display);
+        }
+
+        function forceHide() {
+            const doc = document.getElementById('document-section');
+            doc.style.display = 'none';
+            updateDebugInfo('FORCED HIDE - Document section display: ' + doc.style.display);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateDebugInfo('Page loaded');
+
+            const levelSelect = document.getElementById('level');
+            const documentSection = document.getElementById('document-section');
+
+            updateDebugInfo('Level select found: ' + (levelSelect ? 'YES' : 'NO'));
+            updateDebugInfo('Document section found: ' + (documentSection ? 'YES' : 'NO'));
+
+            if (documentSection) {
+                updateDebugInfo('Initial document section display: ' + documentSection.style.display);
+            }
+
+            function updateFormRequirements() {
+                const selectedLevel = levelSelect ? levelSelect.value : '';
+                updateDebugInfo('Level changed to: "' + selectedLevel + '"');
+
+                if (selectedLevel === '2' || selectedLevel === '3') {
+                    updateDebugInfo('Should SHOW document section');
+                    if (documentSection) {
+                        documentSection.style.display = 'block';
+                        updateDebugInfo('Set display to: ' + documentSection.style.display);
+                    }
+                } else {
+                    updateDebugInfo('Should HIDE document section');
+                    if (documentSection) {
+                        documentSection.style.display = 'none';
+                        updateDebugInfo('Set display to: ' + documentSection.style.display);
+                    }
+                }
+            }
+
+            if (levelSelect) {
+                levelSelect.addEventListener('change', function() {
+                    updateDebugInfo('Change event triggered');
+                    updateFormRequirements();
+                });
+            }
+
+            updateFormRequirements();
+        });
+    </script>
+</body>
+
+</html>

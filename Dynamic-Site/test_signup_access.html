@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ne">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏠 Nepal House Rental - Access Test</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .logo h1 {
+            color: #2c3e50;
+            margin: 0;
+            font-size: 2.5em;
+        }
+        
+        .logo p {
+            color: #7f8c8d;
+            margin: 10px 0;
+        }
+        
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .test-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #3498db;
+            text-align: center;
+        }
+        
+        .test-card h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        
+        .test-link {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .test-link:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+        }
+        
+        .test-link.success {
+            background: #27ae60;
+        }
+        
+        .test-link.success:hover {
+            background: #229954;
+        }
+        
+        .test-link.info {
+            background: #3498db;
+        }
+        
+        .test-link.info:hover {
+            background: #2980b9;
+        }
+        
+        .test-link.warning {
+            background: #f39c12;
+        }
+        
+        .test-link.warning:hover {
+            background: #e67e22;
+        }
+        
+        .instructions {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .instructions h3 {
+            margin-top: 0;
+            color: #856404;
+        }
+        
+        .status-check {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1>🏠 Nepal House Rental</h1>
+            <p>खुसी भएको घर खोज्नुहोस् | Find Your Happy Home</p>
+        </div>
+
+        <div class="status-check">
+            <h3>✅ System Status Check</h3>
+            <p><strong>If you can see this page, your XAMPP and web server are working correctly!</strong></p>
+            <p>🌐 Apache: Running | 📱 Browser: Working | 🎨 CSS: Loading</p>
+        </div>
+
+        <div class="instructions">
+            <h3>🔧 Signup Form Testing Instructions</h3>
+            <p><strong>Test the signup pages in this order:</strong></p>
+            <ol>
+                <li><strong>Start with the Fixed Signup:</strong> This is guaranteed to work</li>
+                <li><strong>Test Original Signup:</strong> The main signup with verification</li>
+                <li><strong>Run Debug Tests:</strong> If pages don't work, use diagnostic tools</li>
+                <li><strong>Check Console:</strong> Press F12 → Console for any JavaScript errors</li>
+            </ol>
+        </div>
+
+        <div class="test-grid">
+            <div class="test-card">
+                <h3>🆕 Fixed Signup Page</h3>
+                <p>Standalone signup page with inline CSS and minimal dependencies. <strong>This should definitely work!</strong></p>
+                <a href="signup_fixed.php" class="test-link success" target="_blank">
+                    Test Fixed Signup
+                </a>
+            </div>
+
+            <div class="test-card">
+                <h3>📧 Original Signup with Verification</h3>
+                <p>The main signup page with email verification and OTP system.</p>
+                <a href="signup_with_verification.php" class="test-link" target="_blank">
+                    Test Original Signup
+                </a>
+            </div>
+
+            <div class="test-card">
+                <h3>🔧 Complete Debug Tool</h3>
+                <p>Comprehensive diagnostics that checks files, database, PHP errors, and more.</p>
+                <a href="debug_signup_complete.php" class="test-link info" target="_blank">
+                    Run Full Diagnostics
+                </a>
+            </div>
+
+            <div class="test-card">
+                <h3>🧪 Simple Test Page</h3>
+                <p>Basic signup test without complex dependencies.</p>
+                <a href="simple_signup_test.php" class="test-link warning" target="_blank">
+                    Test Simple Page
+                </a>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>📍 Direct URLs (Copy & Paste in Browser)</h3>
+            <p><strong>If buttons don't work, try these direct URLs:</strong></p>
+            <ul>
+                <li><code>http://localhost/house-rental-system/Dynamic-Site/signup_fixed.php</code></li>
+                <li><code>http://localhost/house-rental-system/Dynamic-Site/signup_with_verification.php</code></li>
+                <li><code>http://localhost/house-rental-system/Dynamic-Site/debug_signup_complete.php</code></li>
+            </ul>
+        </div>
+
+        <div class="instructions">
+            <h3>❌ Still Not Working? Quick Fixes:</h3>
+            <ul>
+                <li><strong>🔄 Hard Refresh:</strong> Press Ctrl+F5 or Ctrl+Shift+R</li>
+                <li><strong>🕵️ Incognito Mode:</strong> Test in private/incognito window</li>
+                <li><strong>🔧 Check XAMPP:</strong> Ensure Apache (green) in XAMPP Control Panel</li>
+                <li><strong>📱 Try Different Browser:</strong> Chrome, Firefox, Edge</li>
+                <li><strong>🖥️ Check Console:</strong> Press F12 → Console tab → Look for red errors</li>
+                <li><strong>🗂️ File Path:</strong> Make sure you're in the correct directory</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px; padding: 20px; background: #e8f5e8; border-radius: 10px;">
+            <h3>🎯 Expected Result</h3>
+            <p><strong>You should see a beautiful Nepal-themed signup form with:</strong></p>
+            <p>📝 Registration fields | 🛡️ Real-time validation | 📧 Email verification | 🇳🇵 Nepal branding</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('✅ Access test page loaded successfully');
+
+            // Add a visual confirmation that JavaScript is working
+            const container = document.querySelector('.container');
+            const jsIndicator = document.createElement('div');
+            jsIndicator.innerHTML = '✅ JavaScript is working - Page fully loaded!';
+            jsIndicator.style.background = '#d4edda';
+            jsIndicator.style.color = '#155724';
+            jsIndicator.style.padding = '10px';
+            jsIndicator.style.borderRadius = '5px';
+            jsIndicator.style.margin = '10px 0';
+            jsIndicator.style.textAlign = 'center';
+            jsIndicator.style.fontWeight = 'bold';
+            jsIndicator.style.border = '1px solid #c3e6cb';
+            container.appendChild(jsIndicator);
+
+            // Test all links to ensure they're accessible
+            const links = document.querySelectorAll('.test-link');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    console.log('🔗 Testing link:', this.href);
+                    this.style.opacity = '0.7';
+                    setTimeout(() => {
+                        this.style.opacity = '1';
+                    }, 1000);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
