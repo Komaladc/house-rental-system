@@ -35,8 +35,8 @@
 					
 					<li><a href="verify_users_admin_direct.php" <?php if($title == "verify_users_admin_direct"){ ?> id="active_admin" <?php } ?>><i class="fa-solid fa-user-check"></i><span>user verification</span>
 				<?php
-					// Count pending verifications
-					$pendingQuery = "SELECT COUNT(*) as count FROM tbl_user WHERE userStatus = 0 AND userLevel = 2";
+					// Count pending verifications (both owners and agents)
+					$pendingQuery = "SELECT COUNT(*) as count FROM tbl_user WHERE userStatus = 0 AND (userLevel = 2 OR userLevel = 3)";
 					$pendingResult = $db->select($pendingQuery);
 					if($pendingResult){
 						$pendingCount = $pendingResult->fetch_assoc()['count'];

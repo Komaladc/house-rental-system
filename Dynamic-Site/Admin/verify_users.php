@@ -85,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 $pendingQuery = "SELECT u.*, v.verification_status, v.citizenship_id, v.citizenship_front, v.citizenship_back, v.business_license, v.submitted_at, v.admin_comments
                 FROM tbl_user u 
                 LEFT JOIN tbl_user_verification v ON u.userId = v.user_id 
-                WHERE u.userStatus = 0 AND u.userLevel = 2 
+                WHERE u.userStatus = 0 AND (u.userLevel = 2 OR u.userLevel = 3)
                 ORDER BY u.userId DESC";
 
 $pendingResult = $db->select($pendingQuery);
@@ -187,7 +187,11 @@ $recentResult = $db->select($recentQuery);
                         <strong>👤 Username:</strong> <?php echo htmlspecialchars($user['userName']); ?><br>
                         <strong>📧 Email:</strong> <?php echo htmlspecialchars($user['userEmail']); ?><br>
                         <strong>📱 Phone:</strong> <?php echo htmlspecialchars($user['cellNo']); ?><br>
-                        <strong>🏷️ User Type:</strong> <?php echo $user['userLevel'] == 2 ? 'Agent/Owner' : 'User'; ?><br>
+                        <strong>🏷️ User Type:</strong> <?php 
+                            if($user['userLevel'] == 2) echo '🏠 Property Owner';
+                            elseif($user['userLevel'] == 3) echo '🏢 Real Estate Agent';
+                            else echo '👤 Regular User';
+                        ?><br>
                     </div>
                     <div>
                         <strong>📍 Address:</strong> <?php echo htmlspecialchars($user['userAddress'] ?? 'Not provided'); ?><br>

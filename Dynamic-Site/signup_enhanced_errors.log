@@ -358,3 +358,167 @@ Stack trace:
                               'pending', 
                               NOW())
 [04-Aug-2025 16:35:50 Asia/Kathmandu] Insert Result: SUCCESS
+[04-Aug-2025 17:37:29 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 17:37:29 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 17:37:29 Asia/Kathmandu] Header included successfully
+[04-Aug-2025 17:38:03 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 17:38:03 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 17:38:04 Asia/Kathmandu] Header included successfully
+[04-Aug-2025 17:38:53 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 17:38:53 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 17:38:53 Asia/Kathmandu] Header included successfully
+[04-Aug-2025 17:38:53 Asia/Kathmandu] === FORM SUBMISSION DETECTED ===
+[04-Aug-2025 17:38:53 Asia/Kathmandu] POST data: Array
+(
+    [fname] => Komala
+    [lname] => Adhinka
+    [username] => kkkk221
+    [email] => jaiswalharry51@gmail.com
+    [cellno] => 9883264238
+    [password] => 123456
+    [cnf_password] => 123456
+    [level] => 3
+    [address] => plpoiuytsdfghjkl
+    [citizenship_id] => 2973797234782
+    [register] => 
+)
+
+[04-Aug-2025 17:38:53 Asia/Kathmandu] Validation passed - initiating email verification
+[04-Aug-2025 17:38:53 Asia/Kathmandu] Creating pending verification - Email: jaiswalharry51@gmail.com, Created: 2025-08-04 17:38:53, Pending Expires: 2025-08-04 19:38:53, OTP Expires: 2025-08-04 17:58:53
+[04-Aug-2025 17:38:53 Asia/Kathmandu] OTP Insert Query: INSERT INTO tbl_otp (email, otp, purpose, created_at, expires_at, is_used) 
+                         VALUES ('jaiswalharry51@gmail.com', 
+                                '581142', 
+                                'registration', 
+                                '2025-08-04 17:38:53', 
+                                '2025-08-04 17:58:53',
+                                0)
+[04-Aug-2025 17:38:53 Asia/Kathmandu] OTP Insert Result: SUCCESS
+[04-Aug-2025 17:39:33 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 17:39:33 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 17:39:33 Asia/Kathmandu] Header included successfully
+[04-Aug-2025 17:39:33 Asia/Kathmandu] === OTP VERIFICATION ATTEMPT ===
+[04-Aug-2025 17:39:33 Asia/Kathmandu] Email: jaiswalharry51@gmail.com, OTP: 581142
+[04-Aug-2025 17:39:33 Asia/Kathmandu] verifyOTPAndCreateAccount called - Email: jaiswalharry51@gmail.com, OTP: 581142
+[04-Aug-2025 17:39:33 Asia/Kathmandu] Checking pending verification: SELECT * FROM tbl_pending_verification 
+                        WHERE email = 'jaiswalharry51@gmail.com' 
+                        AND expires_at > '2025-08-04 17:39:33'
+                        AND is_verified = 0
+                        ORDER BY created_at DESC LIMIT 1
+[04-Aug-2025 17:39:33 Asia/Kathmandu] Found pending verification - Token: ced5e7d0fe...
+[04-Aug-2025 17:39:33 Asia/Kathmandu] Checking OTP: SELECT * FROM tbl_otp 
+                    WHERE email = 'jaiswalharry51@gmail.com' 
+                    AND otp = '581142' 
+                    AND purpose = 'registration' 
+                    AND expires_at > '2025-08-04 17:39:33'
+                    ORDER BY created_at DESC LIMIT 1
+[04-Aug-2025 17:39:33 Asia/Kathmandu] Marked OTP as used for email: jaiswalharry51@gmail.com
+[04-Aug-2025 17:39:33 Asia/Kathmandu] Creating user account with query: INSERT INTO tbl_user(firstName, lastName, userName, userImg, userEmail, cellNo, phoneNo, userAddress, userPass, confPass, userLevel, userStatus) 
+                     VALUES('Komala',
+                            'Adhinka',
+                            'kkkk221',
+                            '',
+                            'jaiswalharry51@gmail.com',
+                            '9883264238',
+                            '',
+                            'plpoiuytsdfghjkl',
+                            'e10adc3949ba59abbe56e057f20f883e',
+                            'e10adc3949ba59abbe56e057f20f883e',
+                            '3',
+                            0)
+[04-Aug-2025 17:39:33 Asia/Kathmandu] Storing user documents - User ID: 1, Email: jaiswalharry51@gmail.com, Username: kkkk221, Type: Agent, Level: 3
+[04-Aug-2025 17:39:33 Asia/Kathmandu] Insert Query: INSERT INTO tbl_user_verification (user_id, email, userName, user_level, user_type, citizenship_id, citizenship_front, citizenship_back, business_license, verification_status, submitted_at) 
+                       VALUES (1, 
+                              'jaiswalharry51@gmail.com',
+                              'kkkk221',
+                              3,
+                              'Agent', 
+                              '',
+                              NULL, 
+                              NULL, 
+                              NULL, 
+                              'pending', 
+                              NOW())
+[04-Aug-2025 17:39:33 Asia/Kathmandu] Insert Result: SUCCESS - Verification ID: 1
+[04-Aug-2025 17:39:33 Asia/Kathmandu] SUCCESS: User 1 now requires admin verification. Record created with verification_id: 1
+[04-Aug-2025 17:48:23 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 17:48:23 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 17:48:23 Asia/Kathmandu] Header included successfully
+[04-Aug-2025 17:48:49 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 17:48:49 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 17:48:49 Asia/Kathmandu] Header included successfully
+[04-Aug-2025 17:49:37 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 17:49:37 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 17:49:37 Asia/Kathmandu] Header included successfully
+[04-Aug-2025 17:49:37 Asia/Kathmandu] === FORM SUBMISSION DETECTED ===
+[04-Aug-2025 17:49:37 Asia/Kathmandu] POST data: Array
+(
+    [fname] => Komala
+    [lname] => Adhinka
+    [username] => komal
+    [email] => jaiswalharry51@gmail.com
+    [cellno] => 9883264238
+    [password] => 123456
+    [cnf_password] => 123456
+    [level] => 2
+    [address] => bhaktapur,nepal
+    [citizenship_id] => 7654
+    [register] => 
+)
+
+[04-Aug-2025 17:49:37 Asia/Kathmandu] Validation passed - initiating email verification
+[04-Aug-2025 17:49:37 Asia/Kathmandu] Creating pending verification - Email: jaiswalharry51@gmail.com, Created: 2025-08-04 17:49:37, Pending Expires: 2025-08-04 19:49:37, OTP Expires: 2025-08-04 18:09:37
+[04-Aug-2025 17:49:37 Asia/Kathmandu] OTP Insert Query: INSERT INTO tbl_otp (email, otp, purpose, created_at, expires_at, is_used) 
+                         VALUES ('jaiswalharry51@gmail.com', 
+                                '269163', 
+                                'registration', 
+                                '2025-08-04 17:49:37', 
+                                '2025-08-04 18:09:37',
+                                0)
+[04-Aug-2025 17:49:37 Asia/Kathmandu] OTP Insert Result: SUCCESS
+[04-Aug-2025 17:50:27 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 17:50:27 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 17:50:27 Asia/Kathmandu] Header included successfully
+[04-Aug-2025 17:50:27 Asia/Kathmandu] === OTP VERIFICATION ATTEMPT ===
+[04-Aug-2025 17:50:27 Asia/Kathmandu] Email: jaiswalharry51@gmail.com, OTP: 269163
+[04-Aug-2025 17:50:27 Asia/Kathmandu] verifyOTPAndCreateAccount called - Email: jaiswalharry51@gmail.com, OTP: 269163
+[04-Aug-2025 17:50:27 Asia/Kathmandu] Checking pending verification: SELECT * FROM tbl_pending_verification 
+                        WHERE email = 'jaiswalharry51@gmail.com' 
+                        AND expires_at > '2025-08-04 17:50:27'
+                        AND is_verified = 0
+                        ORDER BY created_at DESC LIMIT 1
+[04-Aug-2025 17:50:27 Asia/Kathmandu] Found pending verification - Token: 1454c11fa9...
+[04-Aug-2025 17:50:27 Asia/Kathmandu] Checking OTP: SELECT * FROM tbl_otp 
+                    WHERE email = 'jaiswalharry51@gmail.com' 
+                    AND otp = '269163' 
+                    AND purpose = 'registration' 
+                    AND expires_at > '2025-08-04 17:50:27'
+                    ORDER BY created_at DESC LIMIT 1
+[04-Aug-2025 17:50:27 Asia/Kathmandu] Marked OTP as used for email: jaiswalharry51@gmail.com
+[04-Aug-2025 17:50:27 Asia/Kathmandu] Creating user account with query: INSERT INTO tbl_user(firstName, lastName, userName, userImg, userEmail, cellNo, phoneNo, userAddress, userPass, confPass, userLevel, userStatus) 
+                     VALUES('Komala',
+                            'Adhinka',
+                            'komal',
+                            '',
+                            'jaiswalharry51@gmail.com',
+                            '9883264238',
+                            '',
+                            'bhaktapur,nepal',
+                            'e10adc3949ba59abbe56e057f20f883e',
+                            'e10adc3949ba59abbe56e057f20f883e',
+                            '2',
+                            0)
+[04-Aug-2025 17:50:27 Asia/Kathmandu] Storing user documents - User ID: 1, Email: jaiswalharry51@gmail.com, Username: komal, Type: Owner, Level: 2
+[04-Aug-2025 17:50:27 Asia/Kathmandu] Insert Query: INSERT INTO tbl_user_verification (user_id, email, userName, user_level, user_type, citizenship_id, citizenship_front, citizenship_back, business_license, verification_status, submitted_at) 
+                       VALUES (1, 
+                              'jaiswalharry51@gmail.com',
+                              'komal',
+                              2,
+                              'Owner', 
+                              '',
+                              NULL, 
+                              NULL, 
+                              NULL, 
+                              'pending', 
+                              NOW())
+[04-Aug-2025 17:50:27 Asia/Kathmandu] Insert Result: SUCCESS - Verification ID: 1
+[04-Aug-2025 17:50:27 Asia/Kathmandu] SUCCESS: User 1 now requires admin verification. Record created with verification_id: 1
