@@ -17,7 +17,7 @@ $sdt = new SiteDetails();
 $ntf = new Notification();
 $bk  = new Booking();
 $ibx = new Inbox();
-$db  = new Dashboard();
+$dash = new Dashboard();
 
 if(isset($_GET['action']) && $_GET['action'] == "logout"){
 	session_destroy();
