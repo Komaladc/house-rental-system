@@ -221,54 +221,58 @@ class User{
 		if($result != false){
 			$value = $result->fetch_assoc();
 			
-			// Check if email verification columns exist
-			$checkColumn = "SHOW COLUMNS FROM tbl_user LIKE 'email_verified'";
-			$columnExists = $this->db->select($checkColumn);
-			$useEmailVerification = ($columnExists && $columnExists->num_rows > 0);
+			// Skip email verification for users already approved by admin (userStatus = 1)
+			// OR if they are regular users (userLevel = 1)
+			$skipEmailVerification = ($value['userStatus'] == 1) || ($value['userLevel'] == 1);
 			
-			// Check if email is verified (only if email verification is set up)
-			if($useEmailVerification && isset($value['email_verified']) && $value['email_verified'] == 0) {
-				// Email not verified - generate new OTP and redirect to verification
-				$otp = $this->emailOTP->generateOTP();
+			// Check if email verification columns exist (only for non-approved users)
+			if(!$skipEmailVerification) {
+				$checkColumn = "SHOW COLUMNS FROM tbl_user LIKE 'email_verified'";
+				$columnExists = $this->db->select($checkColumn);
+				$useEmailVerification = ($columnExists && $columnExists->num_rows > 0);
 				
-				if($this->emailOTP->storeOTP($Email, $otp, 'registration')) {
-					$this->emailOTP->sendOTP($Email, $otp, 'registration');
-				}
-				
-				Session::set('pending_verification_email', $Email);
-				
-				$msg = "<div class='alert alert_warning'>
-					⚠️ Your email address is not verified yet.<br>
-					We've sent a new verification code to your email.<br>
-					<a href='verify_email.php?email=" . urlencode($Email) . "' class='btn btn_primary' style='color: white; text-decoration: none; padding: 10px 20px; background: #3498db; border-radius: 5px; display: inline-block; margin-top: 10px;'>
-						Verify Email Now ➡️
-					</a>
-				</div>";
-				return $msg;
-			}
-			
-			// Check if user account is active
-			if($value['userStatus'] == 0) {
-				// Account is inactive - check if it's pending admin verification
-				if($value['userLevel'] == 2) { // Owner or Agent
+				// Check if email is verified (only if email verification is set up and user is not admin-approved)
+				if($useEmailVerification && isset($value['email_verified']) && $value['email_verified'] == 0) {
+					// Email not verified - generate new OTP and redirect to verification
+					$otp = $this->emailOTP->generateOTP();
+					
+					if($this->emailOTP->storeOTP($Email, $otp, 'registration')) {
+						$this->emailOTP->sendOTP($Email, $otp, 'registration');
+					}
+					
+					Session::set('pending_verification_email', $Email);
+					
 					$msg = "<div class='alert alert_warning'>
-						⏳ <strong>Account Pending Admin Verification</strong><br>
-						Your account is waiting for admin approval.<br>
-						📧 You will receive an email once your account is verified.<br>
-						⏱️ This usually takes 1-2 business days.<br><br>
-						<strong>Status:</strong> Pending Admin Verification<br>
-						<strong>Account Type:</strong> Property Owner/Agent<br>
-						<strong>Meanwhile:</strong> You can sign in as a regular user to browse properties<br><br>
-						<a href='signin.php' style='background: #17a2b8; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px;'>🔄 Try Again</a>
+						⚠️ Your email address is not verified yet.<br>
+						We've sent a new verification code to your email.<br>
+						<a href='verify_email.php?email=" . urlencode($Email) . "' class='btn btn_primary' style='color: white; text-decoration: none; padding: 10px 20px; background: #3498db; border-radius: 5px; display: inline-block; margin-top: 10px;'>
+							Verify Email Now ➡️
+						</a>
 					</div>";
 					return $msg;
-				} else {
-					$msg = "<div class='alert alert_danger'>❌ Account is deactivated. Please contact administrator.</div>";
-					return $msg;
 				}
 			}
 			
-			// All checks passed - proceed with login
+		// Check if user account is active
+		if($value['userStatus'] == 0) {
+			// Account is inactive - check if it's pending admin verification
+			if($value['userLevel'] == 2 || $value['userLevel'] == 3) { // Owner or Agent
+				$msg = "<div class='alert alert_warning'>
+					⏳ <strong>Account Pending Admin Verification</strong><br>
+					Your account is waiting for admin approval.<br>
+					📧 You will receive an email once your account is verified.<br>
+					⏱️ This usually takes 1-2 business days.<br><br>
+					<strong>Status:</strong> Pending Admin Verification<br>
+					<strong>Account Type:</strong> Property Owner/Agent<br>
+					<strong>Meanwhile:</strong> You can sign in as a regular user to browse properties<br><br>
+					<a href='signin.php' style='background: #17a2b8; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px;'>🔄 Try Again</a>
+				</div>";
+				return $msg;
+			} else {
+				$msg = "<div class='alert alert_danger'>❌ Account is deactivated. Please contact administrator.</div>";
+				return $msg;
+			}
+		}			// All checks passed - proceed with login
 			Session::set("userlogin", true);
 			Session::set("userId", $value['userId']);
 			Session::set("userFName", $value['firstName']);
@@ -281,15 +285,18 @@ class User{
 			Session::set("userPass", $value['userPass']);
 			Session::set("userLevel", $value['userLevel']);
 			
-			// Redirect based on user level and admin approval status
-			if($value['userLevel'] == 3){
-				// Admin - always redirect to admin dashboard
+			// Redirect based on user level and admin status
+			if($value['userLevel'] == 3 && (strtolower($value['firstName']) == 'admin' || $value['userId'] == 1)){
+				// True admin - redirect to admin dashboard
 				echo"<script>window.location='Admin/dashboard_agent.php'</script>";
 			} elseif($value['userLevel'] == 2 && $value['userStatus'] == 1){
-				// Owner/Agent with admin approval - redirect to owner dashboard
-				echo"<script>window.location='Admin/dashboard_owner.php'</script>";
+				// Approved Property Owner - redirect to main site with owner features
+				echo"<script>window.location='index.php'</script>";
+			} elseif($value['userLevel'] == 3 && $value['userStatus'] == 1){
+				// Approved Real Estate Agent - redirect to main site with agent features
+				echo"<script>window.location='index.php'</script>";
 			} else{
-				// Regular user or owner/agent without approval - redirect to user page
+				// Regular user (level 1) - redirect to main site
 				echo"<script>window.location='index.php'</script>";
 			}
 		} else{
@@ -589,15 +596,24 @@ class User{
 	}
 
 	
-/*Update new owner process*/
+/*Update new owner process - DISABLED to preserve admin verification workflow*/
 	
 	function updateUserStatus(){
+		// This method has been disabled to preserve the admin verification workflow
+		// Users should only be approved through the verify_users.php admin page
+		// Returning false to prevent any automatic approvals
+		error_log("WARNING: updateUserStatus() called but disabled to preserve verification workflow");
+		return false;
+		
+		// Original code disabled:
+		/*
 		$query = "UPDATE tbl_user
 				  SET
 				  userStatus = '1' WHERE
 				  userStatus = '0' AND
 				  userLevel  = '2'";
 		return $updated_row = $this->db->update($query);
+		*/
 	}
 	
 	

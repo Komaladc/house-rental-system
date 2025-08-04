@@ -1,0 +1,7 @@
+# Deny access to sensitive files
+<Files "email_log.txt">
+    Require all denied
+</Files>
+<Files "real_email_log.txt">
+    Require all denied
+</Files>

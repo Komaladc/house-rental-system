@@ -19,9 +19,9 @@
 	
 	$path = $_SERVER['SCRIPT_FILENAME'];
 	$title = basename($path, '.php');
-	if($title == 'owner_list'){
-		$updUstatus = $usr->updateUserStatus();
-	}
+	
+	// Removed automatic user status update to preserve admin verification workflow
+	// Users should only be approved through the verify_users.php page
 ?>
 
 
