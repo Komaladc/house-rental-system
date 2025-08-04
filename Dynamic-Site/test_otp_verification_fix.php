@@ -1,4 +1,9 @@
 <?php
+// Security check - only allow admin access
+if(!defined('ADMIN_DEBUG_ACCESS') && !isset($_SESSION['admin_debug'])) {
+    die('Access denied. Debug files are restricted.');
+}
+
 include_once 'config/config.php';
 include_once 'config/timezone.php';
 include_once 'lib/Database.php';

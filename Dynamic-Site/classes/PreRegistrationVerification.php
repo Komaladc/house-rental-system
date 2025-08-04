@@ -377,8 +377,8 @@ class PreRegistrationVerification {
         $verificationStatus = $requiresVerification ? 'pending' : 'verified';
         $accountStatus = $requiresVerification ? 0 : 1; // 0 = inactive (pending admin approval), 1 = active
         
-        // CRITICAL: Ensure level 2 users ALWAYS get userStatus = 0 (pending admin approval)
-        if ($userLevel == 2) {
+        // CRITICAL: Ensure level 2 AND level 3 users ALWAYS get userStatus = 0 (pending admin approval)
+        if ($userLevel == 2 || $userLevel == 3) {
             $accountStatus = 0; // Force pending status for owners/agents
             $requiresVerification = true;
         }

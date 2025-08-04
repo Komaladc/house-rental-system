@@ -1,5 +1,10 @@
 <?php
-	include "inc/header.php";
+// Security check - only allow admin access
+if(!defined('ADMIN_DEBUG_ACCESS') && !isset($_SESSION['admin_debug'])) {
+    die('Access denied. Debug files are restricted.');
+}
+
+include "inc/header.php";
 	include "classes/EmailOTP.php";
 	include "classes/PreRegistrationVerification.php";
 	

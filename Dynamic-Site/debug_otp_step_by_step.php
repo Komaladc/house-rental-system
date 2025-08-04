@@ -1,4 +1,9 @@
 <?php
+// Security check - only allow admin access
+if(!defined('ADMIN_DEBUG_ACCESS') && !isset($_SESSION['admin_debug'])) {
+    die('Access denied. Debug files are restricted.');
+}
+
 // Debug OTP verification step by step
 session_start();
 include_once "config/timezone.php";

@@ -35,17 +35,51 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['approve_user'])) {
         $userId = intval($_POST['user_id']);
         
-        // Update user status to active
-        $updateUser = "UPDATE tbl_user SET userStatus = 1 WHERE userId = $userId";
+        // Start transaction to ensure both updates succeed
+        $db->link->begin_transaction();
         
-        if ($db->update($updateUser)) {
-            // Update verification record if exists
-            $updateVerification = "UPDATE tbl_user_verification SET verification_status = 'approved', reviewed_at = NOW(), reviewed_by = 1 WHERE user_id = $userId";
-            $db->update($updateVerification);
+        try {
+            // Update user status to active
+            $updateUser = "UPDATE tbl_user SET userStatus = 1 WHERE userId = $userId";
+            $userUpdateResult = $db->update($updateUser);
             
+            if (!$userUpdateResult) {
+                throw new Exception("Failed to update user status");
+            }
+            
+            // Update or create verification record
+            $checkVerification = "SELECT * FROM tbl_user_verification WHERE user_id = $userId";
+            $verificationExists = $db->select($checkVerification);
+            
+            if ($verificationExists && $verificationExists->num_rows > 0) {
+                // Update existing verification record
+                $updateVerification = "UPDATE tbl_user_verification SET verification_status = 'approved', reviewed_at = NOW(), reviewed_by = 1 WHERE user_id = $userId";
+                $verificationResult = $db->update($updateVerification);
+            } else {
+                // Create verification record if it doesn't exist
+                $getUserInfo = "SELECT * FROM tbl_user WHERE userId = $userId";
+                $userInfo = $db->select($getUserInfo);
+                if ($userInfo) {
+                    $user = $userInfo->fetch_assoc();
+                    $userType = ($user['userLevel'] == 2) ? 'Owner' : 'Agent';
+                    $createVerification = "INSERT INTO tbl_user_verification (user_id, email, userName, user_level, user_type, verification_status, reviewed_at, reviewed_by, submitted_at) 
+                                          VALUES ($userId, '{$user['userEmail']}', '{$user['userName']}', {$user['userLevel']}, '$userType', 'approved', NOW(), 1, NOW())";
+                    $verificationResult = $db->insert($createVerification);
+                }
+            }
+            
+            if (!$verificationResult) {
+                throw new Exception("Failed to update verification record");
+            }
+            
+            // Commit transaction
+            $db->link->commit();
             $message = "<div class='alert alert-success'>✅ User approved successfully! They can now sign in.</div>";
-        } else {
-            $message = "<div class='alert alert-danger'>❌ Failed to approve user!</div>";
+            
+        } catch (Exception $e) {
+            // Rollback transaction on error
+            $db->link->rollback();
+            $message = "<div class='alert alert-danger'>❌ Failed to approve user: " . $e->getMessage() . "</div>";
         }
     }
     
@@ -53,10 +87,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $userId = intval($_POST['user_id']);
         $rejectionReason = mysqli_real_escape_string($db->link, $_POST['rejection_reason'] ?? 'No reason provided');
         
-        // Keep user status as 0 (inactive) and update verification record
-        $updateVerification = "UPDATE tbl_user_verification SET verification_status = 'rejected', reviewed_at = NOW(), reviewed_by = 1, admin_comments = '$rejectionReason' WHERE user_id = $userId";
+        // Update or create verification record with rejection
+        $checkVerification = "SELECT * FROM tbl_user_verification WHERE user_id = $userId";
+        $verificationExists = $db->select($checkVerification);
         
-        if ($db->update($updateVerification)) {
+        if ($verificationExists && $verificationExists->num_rows > 0) {
+            // Update existing verification record
+            $updateVerification = "UPDATE tbl_user_verification SET verification_status = 'rejected', reviewed_at = NOW(), reviewed_by = 1, admin_comments = '$rejectionReason' WHERE user_id = $userId";
+            $result = $db->update($updateVerification);
+        } else {
+            // Create verification record with rejection
+            $getUserInfo = "SELECT * FROM tbl_user WHERE userId = $userId";
+            $userInfo = $db->select($getUserInfo);
+            if ($userInfo) {
+                $user = $userInfo->fetch_assoc();
+                $userType = ($user['userLevel'] == 2) ? 'Owner' : 'Agent';
+                $createVerification = "INSERT INTO tbl_user_verification (user_id, email, userName, user_level, user_type, verification_status, reviewed_at, reviewed_by, admin_comments, submitted_at) 
+                                      VALUES ($userId, '{$user['userEmail']}', '{$user['userName']}', {$user['userLevel']}, '$userType', 'rejected', NOW(), 1, '$rejectionReason', NOW())";
+                $result = $db->insert($createVerification);
+            }
+        }
+        
+        if ($result) {
             $message = "<div class='alert alert-warning'>❌ User rejected. Reason: $rejectionReason</div>";
         } else {
             $message = "<div class='alert alert-danger'>❌ Failed to reject user!</div>";
