@@ -377,6 +377,12 @@ class PreRegistrationVerification {
         $verificationStatus = $requiresVerification ? 'pending' : 'verified';
         $accountStatus = $requiresVerification ? 0 : 1; // 0 = inactive (pending admin approval), 1 = active
         
+        // CRITICAL: Ensure level 2 users ALWAYS get userStatus = 0 (pending admin approval)
+        if ($userLevel == 2) {
+            $accountStatus = 0; // Force pending status for owners/agents
+            $requiresVerification = true;
+        }
+        
         // Generate username from email if not provided
         $username = isset($registrationData['username']) ? $registrationData['username'] : 
                    explode('@', $registrationData['email'])[0];
@@ -423,14 +429,17 @@ class PreRegistrationVerification {
             $successMessage = $requiresVerification ? 
                 "<div class='alert alert_success'>
                     🎉 Email verified successfully! Your account has been created.<br>
-                    📋 <strong>Admin Verification Required:</strong> As an agent/owner, your account is pending admin approval.<br>
+                    📋 <strong>Admin Verification Required:</strong> As an owner/agent, your account is pending admin approval.<br>
                     📧 You'll receive an email notification once an admin reviews and approves your account.<br>
                     ⏳ This usually takes 1-2 business days.<br>
                     <br>
+                    <strong>Current Status:</strong> ⏳ PENDING ADMIN APPROVAL<br>
                     <strong>Next Steps:</strong><br>
                     • Wait for admin approval<br>
                     • Check your email for approval notification<br>
-                    • Once approved, you can sign in normally
+                    • Once approved, you can sign in normally<br>
+                    <br>
+                    <strong>Note:</strong> You cannot sign in until an admin approves your account.
                 </div>" :
                 "<div class='alert alert_success'>
                     🎉 Email verified successfully! Your account has been created and is ready to use.<br>
@@ -530,7 +539,9 @@ class PreRegistrationVerification {
     private function storeUserDocuments($userId, $registrationData) {
         $uploadedFiles = isset($registrationData['uploaded_files']) ? $registrationData['uploaded_files'] : [];
         $email = $registrationData['email'];
-        $userType = ($registrationData['level'] == 2) ? 'owner' : (($registrationData['level'] == 3) ? 'agent' : 'user');
+        
+        // Fix user_type to match enum values in database
+        $userType = ($registrationData['level'] == 2) ? 'Owner' : (($registrationData['level'] == 3) ? 'Agent' : 'Owner');
         $citizenshipId = isset($registrationData['citizenship_id']) ? $registrationData['citizenship_id'] : '';
         
         // Generate username from email if not provided
@@ -555,14 +566,17 @@ class PreRegistrationVerification {
                               NOW())";
         
         // Debug logging
-        error_log("Storing user documents - User ID: $userId, Email: $email, Username: $username, Type: $userType, Citizenship ID: $citizenshipId");
+        error_log("Storing user documents - User ID: $userId, Email: $email, Username: $username, Type: $userType, Level: {$registrationData['level']}");
         error_log("Insert Query: $insertQuery");
         
         $result = $this->db->insert($insertQuery);
-        error_log("Insert Result: " . ($result ? 'SUCCESS' : 'FAILED'));
+        error_log("Insert Result: " . ($result ? 'SUCCESS - Verification ID: ' . $result : 'FAILED'));
         
         if (!$result) {
             error_log("MySQL Error: " . mysqli_error($this->db->link));
+        } else {
+            // Additional logging for successful verification record creation
+            error_log("SUCCESS: User $userId now requires admin verification. Record created with verification_id: $result");
         }
         
         return $result;

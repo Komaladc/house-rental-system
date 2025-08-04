@@ -280,3 +280,81 @@ Stack trace:
                               'pending', 
                               NOW())
 [04-Aug-2025 15:30:58 Asia/Kathmandu] Insert Result: SUCCESS
+[04-Aug-2025 16:33:21 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 16:33:21 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 16:33:22 Asia/Kathmandu] Header included successfully
+[04-Aug-2025 16:35:10 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 16:35:10 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 16:35:10 Asia/Kathmandu] Header included successfully
+[04-Aug-2025 16:35:10 Asia/Kathmandu] === FORM SUBMISSION DETECTED ===
+[04-Aug-2025 16:35:10 Asia/Kathmandu] POST data: Array
+(
+    [fname] => Komala
+    [lname] => Adhinka
+    [username] => kkk34
+    [email] => jaiswalharry51@gmail.com
+    [cellno] => 9883264238
+    [password] => 123456
+    [cnf_password] => 123456
+    [level] => 2
+    [address] => bhaktapur,nepal
+    [citizenship_id] => 2973797234782
+    [register] => 
+)
+
+[04-Aug-2025 16:35:10 Asia/Kathmandu] Validation passed - initiating email verification
+[04-Aug-2025 16:35:10 Asia/Kathmandu] Creating pending verification - Email: jaiswalharry51@gmail.com, Created: 2025-08-04 16:35:10, Pending Expires: 2025-08-04 18:35:10, OTP Expires: 2025-08-04 16:55:10
+[04-Aug-2025 16:35:10 Asia/Kathmandu] OTP Insert Query: INSERT INTO tbl_otp (email, otp, purpose, created_at, expires_at, is_used) 
+                         VALUES ('jaiswalharry51@gmail.com', 
+                                '891178', 
+                                'registration', 
+                                '2025-08-04 16:35:10', 
+                                '2025-08-04 16:55:10',
+                                0)
+[04-Aug-2025 16:35:10 Asia/Kathmandu] OTP Insert Result: SUCCESS
+[04-Aug-2025 16:35:50 Asia/Kathmandu] Classes included successfully
+[04-Aug-2025 16:35:50 Asia/Kathmandu] === SIGNUP_ENHANCED.PHP STARTED ===
+[04-Aug-2025 16:35:50 Asia/Kathmandu] Header included successfully
+[04-Aug-2025 16:35:50 Asia/Kathmandu] === OTP VERIFICATION ATTEMPT ===
+[04-Aug-2025 16:35:50 Asia/Kathmandu] Email: jaiswalharry51@gmail.com, OTP: 891178
+[04-Aug-2025 16:35:50 Asia/Kathmandu] verifyOTPAndCreateAccount called - Email: jaiswalharry51@gmail.com, OTP: 891178
+[04-Aug-2025 16:35:50 Asia/Kathmandu] Checking pending verification: SELECT * FROM tbl_pending_verification 
+                        WHERE email = 'jaiswalharry51@gmail.com' 
+                        AND expires_at > '2025-08-04 16:35:50'
+                        AND is_verified = 0
+                        ORDER BY created_at DESC LIMIT 1
+[04-Aug-2025 16:35:50 Asia/Kathmandu] Found pending verification - Token: 5b3ff3aef2...
+[04-Aug-2025 16:35:50 Asia/Kathmandu] Checking OTP: SELECT * FROM tbl_otp 
+                    WHERE email = 'jaiswalharry51@gmail.com' 
+                    AND otp = '891178' 
+                    AND purpose = 'registration' 
+                    AND expires_at > '2025-08-04 16:35:50'
+                    ORDER BY created_at DESC LIMIT 1
+[04-Aug-2025 16:35:50 Asia/Kathmandu] Marked OTP as used for email: jaiswalharry51@gmail.com
+[04-Aug-2025 16:35:50 Asia/Kathmandu] Creating user account with query: INSERT INTO tbl_user(firstName, lastName, userName, userImg, userEmail, cellNo, phoneNo, userAddress, userPass, confPass, userLevel, userStatus) 
+                     VALUES('Komala',
+                            'Adhinka',
+                            'kkk34',
+                            '',
+                            'jaiswalharry51@gmail.com',
+                            '9883264238',
+                            '',
+                            'bhaktapur,nepal',
+                            'e10adc3949ba59abbe56e057f20f883e',
+                            'e10adc3949ba59abbe56e057f20f883e',
+                            '2',
+                            0)
+[04-Aug-2025 16:35:50 Asia/Kathmandu] Storing user documents - User ID: 1, Email: jaiswalharry51@gmail.com, Username: kkk34, Type: owner, Citizenship ID: 
+[04-Aug-2025 16:35:50 Asia/Kathmandu] Insert Query: INSERT INTO tbl_user_verification (user_id, email, userName, user_level, user_type, citizenship_id, citizenship_front, citizenship_back, business_license, verification_status, submitted_at) 
+                       VALUES (1, 
+                              'jaiswalharry51@gmail.com',
+                              'kkk34',
+                              2,
+                              'owner', 
+                              '',
+                              NULL, 
+                              NULL, 
+                              NULL, 
+                              'pending', 
+                              NOW())
+[04-Aug-2025 16:35:50 Asia/Kathmandu] Insert Result: SUCCESS
